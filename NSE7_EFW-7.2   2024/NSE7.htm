@@ -1,0 +1,2323 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to David."/><meta name="keywords" content="Hot Potatoes, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<meta name="dc:creator" content="David" />
+<meta name="dc:title" content="NSE 7" />
+
+
+
+<title>
+NSE 7
+</title>
+
+<!-- Made with executable version 7.0 Release 3 Build 0 -->
+
+<!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
+
+
+
+<style>
+
+
+/* This is the CSS stylesheet used in the exercise. */
+/* Elements in square brackets are replaced by data based on configuration settings when the exercise is built. */
+
+/* BeginCorePageCSS */
+
+/* Made with executable version 7.0 Release 3 Build 0 */
+
+
+
+/* CSS variables for colours. */
+:root{
+	--strFontFace:       Geneva,Arial,sans-serif;
+	--strFontSize:       medium;
+	--strTextColor:      #000000;
+	--strTitleColor:     #000000;
+
+	--strFuncLightColor: #ffffff;
+	--strFuncShadeColor: #7f7f7f;
+	--strLinkColor:      #0000FF;
+	--strVLinkColor:     #0000CC;
+	
+	--strNavBarColor:    #000000;
+	--strNavLightColor:  #7f7f7f;
+	--strNavShadeColor:  #000000;
+	--strNavTextColor:   #ffffff;
+	
+	--strPageBGColor:    #C0C0C0;
+	--strExBGColor:      #FFFFFF;
+}
+
+body{
+	font-family: var(--strFontFace);
+	background-color: var(--strPageBGColor);
+	color: var(--strTextColor);
+ 
+	margin-right: 5%;
+	margin-left: 5%;
+	font-size: var(--strFontSize);
+	padding-bottom: 0.5em;
+}
+
+p{
+	text-align: left;
+	margin: 0px;
+	font-size: 1em;
+}
+
+table,div,span,td{
+	font-size: 1em;
+	color: var(--strTextColor);
+}
+
+div.Titles{
+	padding: 0.5em;;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+button{
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: 140%;
+	color: var(--strTitleColor);
+}
+
+.ExerciseSubtitle{
+	font-size: 120%;
+	color: var(--strTitleColor);
+}
+
+div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
+	background-color: var(--strExBGColor);
+	text-align: center;
+	font-size: 1em;
+	color: var(--strTextColor);
+	padding: 0.5em;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: var(--strTextColor);
+	margin-bottom: 1px;
+}
+
+div.ReadingContainer, div.ExerciseContainer{
+	min-width: 15em;
+	flex-grow: 1;
+	flex-basis: 0;
+	margin: 1px;
+}
+
+div#ContainerDiv{
+	margin: -1px;
+	padding: 0;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* EndCorePageCSS */
+
+.RTLText{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+.CentredRTLText{
+	text-align: center;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+button p.RTLText{
+	text-align: center;
+}
+
+.RTLGapBox{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Times New Roman", var(--strFontFace);
+}
+
+.Guess{
+	font-weight: bold;
+}
+
+.CorrectAnswer{
+	font-weight: bold;
+}
+
+div#Timer{
+	padding: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+span#TimerText{
+	padding: 0.25em;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	display: none;
+	color: var(--strTitleColor);
+}
+
+span.Instructions{
+
+}
+
+div.ExerciseText{
+
+}
+
+.FeedbackText, .FeedbackText span.CorrectAnswer, .FeedbackText span.Guess, .FeedbackText span.Answer{
+	color: var(--strTitleColor);
+}
+
+.LeftItem{
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+.RightItem{
+	font-weight: bold;
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+span.CorrectMark{
+
+}
+
+input, textarea{
+	font-family: var(--strFontFace);
+	font-size: 120%;
+}
+
+select{
+	font-size: 1em;
+}
+
+div.Feedback {
+	background-color: var(--strPageBGColor);
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: var(--strTitleColor);
+	position: absolute;
+	display: none;
+	font-size: 1em;
+}
+
+
+
+
+div.ExerciseDiv{
+	color: var(--strTextColor);
+}
+
+/* JMatch standard output table. */
+table.MatchTable{
+	margin: 2em auto; 
+	border-width: 0;
+}
+
+/* JMatch flashcard styles */
+table.FlashcardTable{
+	background-color: transparent;
+	color: var(--strTextColor);
+	border-color: var(--strTextColor);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	/*width: 90%;*/
+	position: relative;
+	text-align: center;
+	padding: 0px;
+}
+
+table.FlashcardTable tr{
+	border-style: none;
+	margin: 0px;
+	padding: 0px;
+	background-color: var(--strExBGColor);
+}
+
+table.FlashcardTable td.Showing{
+	font-size: 140%;
+	text-align: center;
+	width: 50%;
+	display: table-cell;
+	padding: 2em;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5em;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+	background-color: var(--strPageBGColor);
+}
+
+table.FlashcardTable td.Hidden{
+	display: none;
+}
+
+/* JMix styles */
+div.JMixDrag, div.JMatchDrag{
+	padding: 0;
+	background-color: var(--strPageBGColor);
+	border-style: none;
+}
+
+div#GuessDiv{
+	padding: 0.5em;
+	margin-bottom: 2em;
+}
+
+div#SegmentDiv{
+	margin-top: 2em;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+a.ExSegment{
+	font-size: 120%;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--strTextColor);
+	display: inline-block;
+	padding: 0.5em;
+	border: solid 1pt gray;
+	margin-bottom: 0.5em;
+}
+
+span.RemainingWordList{
+	font-style: italic;
+}
+
+div.DropLine {
+	position: absolute;
+	text-align: left;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: var(--strTitleColor);
+	width: 80%;
+	left: 10%;
+}
+
+/* JCloze styles */
+
+.ClozeWordList{
+	text-align: center;
+	font-weight: bold;
+}
+
+div.ClozeBody{
+	text-align: left;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	line-height: 2.0
+}
+
+span.GapSpan{
+	font-weight: bold;
+}
+
+/* JCross styles */
+
+table.CrosswordGrid{
+	margin: auto auto 1em auto;
+	border-collapse: collapse;
+	padding: 0px;
+	background-color: #000000;
+}
+
+table.CrosswordGrid tbody tr td{
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 140%;
+	padding: 1px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid span{
+	color: #000000;
+}
+
+table.CrosswordGrid td.BlankCell{
+	background-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid td.LetterOnlyCell{
+	text-align: center;
+	vertical-align: middle;
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+}
+
+table.CrosswordGrid td.NumLetterCell{
+	text-align: left;
+	vertical-align: top;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 1px;
+	font-weight: bold;
+}
+
+.NumLetterCellText{
+	cursor: pointer;
+	color: #000000;
+}
+
+.GridNum{
+	vertical-align: super;
+	font-size: 66%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000000;
+}
+
+.GridNum:hover, .GridNum:visited{
+	color: #000000;
+}
+
+table#Clues{
+	margin: auto;
+	vertical-align: top;
+}
+
+table#Clues td{
+	vertical-align: top;
+}
+
+table.ClueList{
+  margin: auto;
+}
+
+td.ClueNum{
+	text-align: right;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+td.Clue{
+	text-align: left;
+}
+
+div#ClueEntry{
+	text-align: left;
+	margin-bottom: 1em;
+}
+
+/* Keypad styles */
+
+div.Keypad{
+	text-align: center;
+	display: none; /* initially hidden, shown if needed */
+	margin-bottom: 0.5em;
+}
+
+div.Keypad button{
+	font-family: var(--strFontFace);
+	font-size: 120%;
+	background-color: #ffffff;
+	color: #000000;
+	width: 2em;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5em;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
+}
+
+/* JQuiz styles */
+
+div.QuestionNavigation{
+	text-align: center;
+}
+
+.QNum{
+	margin: 0em 1em 0.5em 1em;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+textarea{
+	font-family: var(--strFontFace);
+}
+
+.QuestionText{
+	text-align: left;
+	margin: 0px;
+	font-size: 1em;
+}
+
+.Answer{
+	font-size: 120%;
+}
+
+.PartialAnswer{
+	font-size: 120%;
+	letter-spacing: 0.1em;
+	color: var(--strTitleColor);
+}
+
+.Highlight{
+	color: #000000;
+	background-color: #ffff00;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+ol.QuizQuestions{
+	text-align: left;
+	list-style-type: none;
+}
+
+li.QuizQuestion{
+	padding: 1em;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+}
+
+ol.MCAnswers{
+	text-align: left;
+	list-style-type: upper-alpha;
+	padding: 1em;
+}
+
+ol.MCAnswers li{
+	margin-bottom: 1em;
+}
+
+ol.MSelAnswers{
+	text-align: left;
+	list-style-type: lower-alpha;
+	padding: 1em;
+}
+
+div.ShortAnswer{
+	padding: 1em;
+}
+
+.FuncButton {
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 3em;
+
+	border-left-color: var(--strFuncLightColor);
+	border-top-color: var(--strFuncLightColor);
+	border-right-color: var(--strFuncShadeColor);
+	border-bottom-color: var(--strFuncShadeColor);
+	color: var(--strTextColor);
+	background-color: var(--strExBGColor);
+
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.2em 0.3em 0.2em var(--strFuncShadeColor);
+}
+
+.FuncButton:active {
+	box-shadow: none;
+}
+
+.FuncButton:hover{
+	color: var(--strExBGColor);
+	background-color: var(--strTextColor);
+}
+
+/*BeginNavBarStyle*/
+
+div.NavButtonBar{
+	background-color: var(--strNavBarColor);
+	text-align: center;
+	margin: 0.25rem 0;
+	clear: both;
+	font-size: 1em;
+	padding: 0.2em;
+	box-sizing: border-box;
+}
+
+.NavButton {
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 3em;
+	
+	border-left-color: var(--strNavLightColor);
+	border-top-color: var(--strNavLightColor);
+	border-right-color: var(--strNavShadeColor);
+	border-bottom-color: var(--strNavShadeColor); 
+	background-color: var(--strNavBarColor);
+	color: var(--strNavTextColor);
+
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+}
+
+.NavButton:active {
+	box-shadow: none;
+}
+
+.NavButton:hover{
+	color: var(--strNavBarColor);
+	background-color: var(--strNavTextColor);
+}
+
+/*EndNavBarStyle*/
+
+a{
+	color: var(--strLinkColor);
+}
+
+a:visited{
+	color: var(--strVLinkColor);
+}
+
+a:hover{
+	color: var(--strLinkColor);
+}
+
+div.CardStyle {
+	position: absolute;
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 2em;
+	border-width: 1pt;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
+	background-color: var(--strExBGColor);
+	left: -50px;
+	top: -50px;
+	overflow: visible;
+	touch-action: none;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+div.CardStyleCentered{
+	text-align: center;
+}
+
+.rtl{
+	text-align: right;
+	font-size: 140%;
+}
+
+
+</style>
+
+<script>
+
+//<![CDATA[
+
+<!--
+
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+function FocusAButton(){
+	if (document.getElementById('CheckButton1') != null){
+		document.getElementById('CheckButton1').focus();
+	}
+	else{
+		if (document.getElementById('CheckButton2') != null){
+			document.getElementById('CheckButton2').focus();
+		}
+		else{
+			document.getElementsByTagName('button')[0].focus();
+		}
+	}
+}
+
+
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+	var Output = Feedback + '<br /><br />';
+	document.getElementById('FeedbackContent').innerHTML = Output;
+	var FDiv = document.getElementById('FeedbackDiv');
+	topZ++;
+	FDiv.style.zIndex = topZ;
+	FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+	FDiv.style.display = 'block';
+
+	ShowElements(false, 'input');
+	ShowElements(false, 'select');
+	ShowElements(false, 'object');
+	ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+	setTimeout("document.getElementById('FeedbackOKButton').focus()", 50);
+	
+//
+//	RefreshImages();
+//
+}
+
+function ShowElements(Show, TagName, ContainerToReverse){
+// added third argument to allow objects in the feedback box to appear
+//IE bug -- hide all the form elements that will show through the popup
+//FF on Mac bug : doesn't redisplay objects whose visibility is set to visible
+//unless the object's display property is changed
+
+	//get container object (by Id passed in, or use document otherwise)
+	TopNode = document.getElementById(ContainerToReverse);
+	var Els;
+	if (TopNode != null) {
+		Els = TopNode.getElementsByTagName(TagName);
+	} else {
+		Els = document.getElementsByTagName(TagName);
+	}
+
+	for (var i=0; i<Els.length; i++){
+		if (TagName == "object") {
+			//manipulate object elements in all browsers
+			if (Show == true){
+				Els[i].style.visibility = 'visible';
+			}
+			else{
+				Els[i].style.visibility = 'hidden';
+			}
+		} 
+	}
+}
+
+
+
+function HideFeedback(){
+	document.getElementById('FeedbackDiv').style.display = 'none';
+	ShowElements(true, 'input');
+	ShowElements(true, 'select');
+	ShowElements(true, 'object');
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+	this.W = 600;
+	this.H = 400;
+	this.W = document.getElementsByTagName('body')[0].offsetWidth;
+	this.H = document.getElementsByTagName('body')[0].offsetHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+	var XY = {x: 0, y: 0};
+	while(El){
+		XY.x += El.offsetLeft;
+		XY.y += El.offsetTop;
+		El = El.offsetParent;
+	}
+	return XY;
+}
+
+function GetScrollTop(){
+	if (typeof(window.pageYOffset) == 'number'){
+		return window.pageYOffset;
+	}
+	else{
+		if ((document.body)&&(document.body.scrollTop)){
+			return document.body.scrollTop;
+		}
+		else{
+			if ((document.documentElement)&&(document.documentElement.scrollTop)){
+				return document.documentElement.scrollTop;
+			}
+			else{
+				return 0;
+			}
+		}
+	}
+}
+
+function GetViewportHeight(){
+	if (typeof window.innerHeight != 'undefined'){
+		return window.innerHeight;
+	}
+	else{
+		if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+			return document.documentElement.clientHeight;
+		}
+		else{
+			return document.getElementsByTagName('body')[0].clientHeight;
+		}
+	}
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+	var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+	return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+	if (InTextBox == true){return;}
+	thisKey = e.keyCode;
+
+	var Suppress = false;
+
+	if (thisKey == 8) {
+		Suppress = true;
+		e.preventDefault();
+	}
+}
+
+window.addEventListener('keypress',SuppressBackspace,false);
+
+function ReduceItems(InArray, ReduceToSize){
+	var ItemToDump=0;
+	var j=0;
+	while (InArray.length > ReduceToSize){
+		ItemToDump = Math.floor(InArray.length*Math.random());
+		InArray.splice(ItemToDump, 1);
+	}
+}
+
+function Shuffle(InArray){
+	var Num;
+	var Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < (j-1); k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+	document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+	RefreshImages();
+
+}
+
+
+
+Imgs = new Array();
+
+function PreloadImages(){
+	var a = PreloadImages.arguments;
+	for (var i=0; i<a.length; i++){
+		Imgs[i] = new Image();
+		Imgs[i].src = a[i];
+	}
+}
+
+function RefreshImages(){
+	for (var i=0; i<document.images.length; i++){
+		if (document.images[i].name.substring(0,6) != 'NavBar'){
+			document.images[i].src = document.images[i].src;
+		}
+	}
+}
+
+
+function EscapeDoubleQuotes(InString){
+	return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+	if (InArray.length < 1){return -1;}
+
+	var Longest = 0;
+	for (var i=1; i<InArray.length; i++){
+		if (InArray[i].length > InArray[Longest].length){
+			Longest = i;
+		}
+	}
+	return Longest;
+}
+
+//SELECTION OBJECT FOR TYPING WITH KEYPAD
+var selObj = null;
+            
+SelObj = function(box){
+	this.box = box;
+	this.selStart = this.box.selectionStart;
+	this.selEnd = this.box.selectionEnd;
+	this.selText = this.box.value.substring(this.selStart, this.selEnd);
+	return this;
+}
+
+function setSelText(newText){
+	var caretPos = this.selStart + newText.length;
+	var newValue = this.box.value.substring(0, this.selStart);
+	newValue += newText;
+	newValue += this.box.value.substring(this.selEnd, this.box.value.length);
+	this.box.value = newValue;
+	this.box.setSelectionRange(caretPos, caretPos);
+	this.box.focus();
+}
+SelObj.prototype.setSelText = setSelText;
+
+function setSelSelectionRange(start, end){
+	this.box.setSelectionRange(start, end);
+}
+SelObj.prototype.setSelSelectionRange = setSelSelectionRange;
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+	var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+	Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+	return Result;
+}
+
+function IsCJK(CharNum){
+	return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+	var NList = document.getElementsByTagName('input');
+	for (var i=0; i<NList.length; i++){
+		if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+			NList[i].value = '';
+		}
+		if (NList[i].id.indexOf('Chk') > -1){
+			NList[i].checked = '';
+		}
+	}
+}
+
+
+
+
+
+
+
+//JQUIZ CORE JAVASCRIPT CODE
+
+var CurrQNum = 0;
+var CorrectIndicator = '&#x2714;';
+var IncorrectIndicator = '&#x2718;';
+var YourScoreIs = 'Your score is ';
+
+//New for 6.2.2.0
+var CompletedSoFar = 'Questions completed so far: ';
+var ExerciseCompleted = 'You have completed the exercise.';
+var ShowCompletedSoFar = true;
+
+var ContinuousScoring = true;
+var CorrectFirstTime = 'Questions answered correctly first time: ';
+var ShowCorrectFirstTime = true;
+var ShuffleQs = false;
+var ShuffleAs = false;
+var DefaultRight = 'Correct!';
+var DefaultWrong = 'Sorry! Try again.';
+var QsToShow = 66;
+var Score = 0;
+var Finished = false;
+var Qs = null;
+var QArray = new Array();
+var ShowingAllQuestions = false;
+var ShowAllQuestionsCaption = 'Show all questions';
+var ShowOneByOneCaption = 'Show questions one by one';
+var State = new Array();
+var Feedback = '';
+var TimeOver = false;
+var strInstructions = '';
+var Locked = false;
+
+//The following variable can be used to add a message explaining that
+//the question is finished, so no further marking will take place.
+var strQuestionFinished = '';
+
+function CompleteEmptyFeedback(){
+	var QNum, ANum;
+	for (QNum=0; QNum<I.length; QNum++){
+//Only do this if not multi-select
+		if (I[QNum][2] != '3'){
+  		for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+  			if (I[QNum][3][ANum][1].length < 1){
+  				if (I[QNum][3][ANum][2] > 0){
+  					I[QNum][3][ANum][1] = DefaultRight;
+  				}
+  				else{
+  					I[QNum][3][ANum][1] = DefaultWrong;
+  				}
+  			}
+  		}
+		}
+	}
+}
+
+function SetUpQuestions(){
+	var AList = new Array(); 
+	var QList = new Array();
+	var i, j;
+	Qs = document.getElementById('Questions');
+	while (Qs.getElementsByTagName('li').length > 0){
+		QList.push(Qs.removeChild(Qs.getElementsByTagName('li')[0]));
+	}
+	var DumpItem = 0;
+	if (QsToShow > QList.length){
+		QsToShow = QList.length;
+	}
+	while (QsToShow < QList.length){
+		DumpItem = Math.floor(QList.length*Math.random());
+		for (j=DumpItem; j<(QList.length-1); j++){
+			QList[j] = QList[j+1];
+		}
+		QList.length = QList.length-1;
+	}
+	if (ShuffleQs == true){
+		QList = Shuffle(QList);
+	}
+	if (ShuffleAs == true){
+		var As;
+		for (var i=0; i<QList.length; i++){
+			As = QList[i].getElementsByTagName('ol')[0];
+			if (As != null){
+  			AList.length = 0;
+				while (As.getElementsByTagName('li').length > 0){
+					AList.push(As.removeChild(As.getElementsByTagName('li')[0]));
+				}
+				AList = Shuffle(AList);
+				for (j=0; j<AList.length; j++){
+					As.appendChild(AList[j]);
+				}
+			}
+		}
+	}
+	
+	for (i=0; i<QList.length; i++){
+		Qs.appendChild(QList[i]);
+		QArray[QArray.length] = QList[i];
+	}
+
+//Show the first item
+	QArray[0].style.display = '';
+	
+//Now hide all except the first item
+	for (i=1; i<QArray.length; i++){
+		QArray[i].style.display = 'none';
+	}		
+	SetQNumReadout();
+	
+	SetFocusToTextbox();
+}
+
+function SetFocusToTextbox(){
+//if there's a textbox, set the focus in it
+	if (QArray[CurrQNum].getElementsByTagName('input')[0] != null){
+		QArray[CurrQNum].getElementsByTagName('input')[0].focus();
+//and show a keypad if there is one
+		if (document.getElementById('CharacterKeypad') != null){
+			document.getElementById('CharacterKeypad').style.display = 'block';
+		}
+	}
+	else{
+  	if (QArray[CurrQNum].getElementsByTagName('textarea')[0] != null){
+  		QArray[CurrQNum].getElementsByTagName('textarea')[0].focus();	
+//and show a keypad if there is one
+			if (document.getElementById('CharacterKeypad') != null){
+				document.getElementById('CharacterKeypad').style.display = 'block';
+			}
+		}
+//This added for 6.0.4.11: hide accented character buttons if no textbox
+		else{
+			if (document.getElementById('CharacterKeypad') != null){
+				document.getElementById('CharacterKeypad').style.display = 'none';
+			}
+		}
+	}
+}
+
+function ChangeQ(ChangeBy){
+//The following line prevents moving to another question until the current
+//question is answered correctly. Uncomment it to enable this behaviour. 
+//	if (State[CurrQNum][0] == -1){return;}
+	if (((CurrQNum + ChangeBy) < 0)||((CurrQNum + ChangeBy) >= QArray.length)){return;}
+	QArray[CurrQNum].style.display = 'none';
+	CurrQNum += ChangeBy;
+	QArray[CurrQNum].style.display = '';
+//Undocumented function added 10/12/2004
+	ShowSpecialReadingForQuestion();
+	SetQNumReadout();
+	SetFocusToTextbox();
+}
+
+var HiddenReadingShown = false;
+function ShowSpecialReadingForQuestion(){
+//Undocumented function for showing specific reading text elements which change with each question
+//Added on 10/12/2004
+	if (document.getElementById('ReadingDiv') != null){
+		if (HiddenReadingShown == true){
+			document.getElementById('ReadingDiv').innerHTML = '';
+		}
+		if (QArray[CurrQNum] != null){
+//Fix for 6.0.4.25
+			var Children = QArray[CurrQNum].getElementsByTagName('div');
+			for (var i=0; i<Children.length; i++){
+			if (Children[i].className=="HiddenReading"){
+					document.getElementById('ReadingDiv').innerHTML = Children[i].innerHTML;
+					HiddenReadingShown = true;
+//Hide the ShowAllQuestions button to avoid confusion
+					if (document.getElementById('ShowMethodButton') != null){
+						document.getElementById('ShowMethodButton').style.display = 'none';
+					}
+				}
+			}	
+		}
+	}
+}
+
+function SetQNumReadout(){
+	document.getElementById('QNumReadout').innerHTML = (CurrQNum+1) + ' / ' + QArray.length;
+	if ((CurrQNum+1) >= QArray.length){
+		if (document.getElementById('NextQButton') != null){
+			document.getElementById('NextQButton').style.visibility = 'hidden';
+		}
+	}
+	else{
+		if (document.getElementById('NextQButton') != null){
+			document.getElementById('NextQButton').style.visibility = 'visible';
+		}
+	}
+	if (CurrQNum <= 0){
+		if (document.getElementById('PrevQButton') != null){
+			document.getElementById('PrevQButton').style.visibility = 'hidden';
+		}
+	}
+	else{
+		if (document.getElementById('PrevQButton') != null){
+			document.getElementById('PrevQButton').style.visibility = 'visible';
+		}
+	}
+}
+
+var I=new Array();
+I[0]=new Array();I[0][0]=100;
+I[0][1]='';
+I[0][2]='0';
+I[0][3]=new Array();
+I[0][3][0]=new Array('The access is allowed based on the FortiGuard Category Based Filter configuration','',0,0,1);
+I[0][3][1]=new Array('The access is blocked based on the Content Filter configuration','',0,0,1);
+I[0][3][2]=new Array('The access is blocked based on the URL Filter configuration','',1,100,1);
+I[0][3][3]=new Array('The access is hocked if the local or the public FortiGuard server does not reply','',0,0,1);
+I[1]=new Array();I[1][0]=100;
+I[1][1]='';
+I[1][2]='0';
+I[1][3]=new Array();
+I[1][3][0]=new Array('F-SBID(--name "eicar": --protocol udp; --flow from_ server; --pattern "eicar"; -- context host;)','',0,0,1);
+I[1][3][1]=new Array('F-SBID(--name "detect_ eicar"; --protocol tcp; --service dns; --flow from_ server; -- pattern "eicar"; --no_ case;)','',0,0,1);
+I[1][3][2]=new Array('F-SBID(--name "detect_ eicar"; --protocol udp; --service ssl; --flow from client; -- pattern "www.eicar.org"; --no_ case; --context host;).','',0,0,1);
+I[1][3][3]=new Array('F-SBID(--name "eicar"; protocol tcp; --service HTTP; --flow from client; --pattern "www.eicar.org"; --no_ case; --context host;)','',1,100,1);
+I[2]=new Array();I[2][0]=100;
+I[2][1]='';
+I[2][2]='3';
+I[2][3]=new Array();
+I[2][3][0]=new Array('When run on the Remote FortiGate directly, administrators do not have the option to review the changes prior to installation.','',1,100,1);
+I[2][3][1]=new Array('When run on the Device Database, changes are applied directly to the managed FortiGate device.','',0,0,1);
+I[2][3][2]=new Array('When run on the Policy Package, ADOM database, you must use the installation wizard to apply the changes to the managed FortiGate device.','',1,100,1);
+I[2][3][3]=new Array('When run on the All FortiGate in ADOM, changes are automatically installed without the creation of a new revision history','',0,0,1);
+I[3]=new Array();I[3][0]=100;
+I[3][1]='';
+I[3][2]='0';
+I[3][3]=new Array();
+I[3][3][0]=new Array('Route-reflector enable','',0,0,1);
+I[3][3][1]=new Array('Route-reflector-peer enable','',0,0,1);
+I[3][3][2]=new Array('Route-reflector-client enable','',1,100,1);
+I[3][3][3]=new Array('Route-reflector-server enable','',0,0,1);
+I[4]=new Array();I[4][0]=100;
+I[4][1]='';
+I[4][2]='0';
+I[4][3]=new Array();
+I[4][3][0]=new Array('diagnose sniffer packet any \u2018host 10.0.10.10\u2019','',0,0,1);
+I[4][3][1]=new Array('diagnose sniffer packet any \u2018esp and host 10.200.3.2\u2019','',0,0,1);
+I[4][3][2]=new Array('diagnose sniffer packet any \u2018ip proto 50\u2019','',0,0,1);
+I[4][3][3]=new Array('diagnose sniffer packet any \u2018port 4500','',1,100,1);
+I[5]=new Array();I[5][0]=100;
+I[5][1]='';
+I[5][2]='3';
+I[5][3]=new Array();
+I[5][3][0]=new Array('The local FortiGate has been elected as the OSPF backup designated router','',0,0,1);
+I[5][3][1]=new Array('Two OSPF routers are down in the port4 network','',0,0,1);
+I[5][3][2]=new Array('The port4 interface is connected to the OSPF backbone area','',1,100,1);
+I[5][3][3]=new Array('There are at least 5 OSPF routers connected to the port4 network','',1,100,1);
+I[6]=new Array();I[6][0]=100;
+I[6][1]='';
+I[6][2]='3';
+I[6][3]=new Array();
+I[6][3][0]=new Array('add-route is disabled in the tunnel IPSec phase 1 configuration.','',1,100,1);
+I[6][3][1]=new Array('OSPF is configured to run over IPSec.','',0,0,1);
+I[6][3][2]=new Array('net-device is enabled in the tunnel IPSec phase 1 configuration.','',1,100,1);
+I[6][3][3]=new Array('IPSec tunnel aggregation is configured.','',0,0,1);
+I[7]=new Array();I[7][0]=100;
+I[7][1]='';
+I[7][2]='3';
+I[7][3]=new Array();
+I[7][3][0]=new Array('Dead peer detection is set to enable','',0,0,1);
+I[7][3][1]=new Array('Forward error correction in phase 2 is set to enable','',0,0,1);
+I[7][3][2]=new Array('Both IPsec SAs are loaded on the kernel','',1,100,1);
+I[7][3][3]=new Array('The IKE version is 2','',1,100,1);
+I[8]=new Array();I[8][0]=100;
+I[8][1]='';
+I[8][2]='0';
+I[8][3]=new Array();
+I[8][3][0]=new Array('fortiguard-anycast is set to enable.','',1,100,1);
+I[8][3][1]=new Array('FortiManager provides FortiGuard','',0,0,1);
+I[8][3][2]=new Array('You do not have the corresponding write access.','',0,0,1);
+I[8][3][3]=new Array('udp is not a protocol option.','',0,0,1);
+I[9]=new Array();I[9][0]=100;
+I[9][1]='';
+I[9][2]='0';
+I[9][3]=new Array();
+I[9][3][0]=new Array('The routing table shows a single IPSec virtual interface','',1,100,1);
+I[9][3][1]=new Array('Dead peer detection is disabled','',0,0,1);
+I[9][3][2]=new Array('FortiGate creates separate virtual interfaces for each dial-up client','',0,0,1);
+I[9][3][3]=new Array('The VPN should use the dynamic routing protocol to exchange routing information through the tunnels','',0,0,1);
+I[10]=new Array();I[10][0]=100;
+I[10][1]='';
+I[10][2]='3';
+I[10][3]=new Array();
+I[10][3][0]=new Array('It can support neighbors only over the next hop in BGP.','',0,0,1);
+I[10][3][1]=new Array('You must configure it globally only.','',0,0,1);
+I[10][3][2]=new Array('It works for OSPF and BGP.','',1,100,1);
+I[10][3][3]=new Array('You can disable it at the protocol level.','',1,100,1);
+I[11]=new Array();I[11][0]=100;
+I[11][1]='';
+I[11][2]='3';
+I[11][3]=new Array();
+I[11][3][0]=new Array('By default, FortiGate-B is the primary virtual router','',0,0,1);
+I[11][3][1]=new Array('The VRRP domain uses the physical MAC address of the primary FortiGate','',0,0,1);
+I[11][3][2]=new Array('On failover, new primary device uses the same MAC address as the old primary','',1,100,1);
+I[11][3][3]=new Array('10.1.5.254 is the default gateway of the internal network.','',1,100,1);
+I[12]=new Array();I[12][0]=100;
+I[12][1]='';
+I[12][2]='3';
+I[12][3]=new Array();
+I[12][3][0]=new Array('update-source','',1,100,1);
+I[12][3][1]=new Array('recursive-next-hop','',0,0,1);
+I[12][3][2]=new Array('ebgp-enforce-multihop','',1,100,1);
+I[12][3][3]=new Array('ibgp-enforce-multihop','',0,0,1);
+I[13]=new Array();I[13][0]=100;
+I[13][1]='';
+I[13][2]='0';
+I[13][3]=new Array();
+I[13][3][0]=new Array('Configure the hub as a route reflector','',1,100,1);
+I[13][3][1]=new Array('Configure auto-discovery-sender on the hub','',0,0,1);
+I[13][3][2]=new Array('Enable route redistribution under config router bgp','',0,0,1);
+I[13][3][3]=new Array('Add a prefix list to the hub that permits routes to be shared between the spokes','',0,0,1);
+I[14]=new Array();I[14][0]=100;
+I[14][1]='';
+I[14][2]='0';
+I[14][3]=new Array();
+I[14][3][0]=new Array('Only NPs are disabled','',0,0,1);
+I[14][3][1]=new Array('Only CPs are disabled','',0,0,1);
+I[14][3][2]=new Array('NPs and CPs are disabled.','',0,0,1);
+I[14][3][3]=new Array('NPS and CPs are enabled.','',1,100,1);
+I[15]=new Array();I[15][0]=100;
+I[15][1]='';
+I[15][2]='0';
+I[15][3]=new Array();
+I[15][3][0]=new Array('The TCL script must start with #include.','',0,0,1);
+I[15][3][1]=new Array('The TCL procedure lacks the required loop statements to iterate through the changes.','',0,0,1);
+I[15][3][2]=new Array('There is no corresponding #! to signify the end of the script.','',0,0,1);
+I[15][3][3]=new Array('The TCL procedure run_ cmd has not been created','',1,100,1);
+I[16]=new Array();I[16][0]=100;
+I[16][1]='';
+I[16][2]='0';
+I[16][3]=new Array();
+I[16][3][0]=new Array('FGCP in active-active mode','',0,0,1);
+I[16][3][1]=new Array('VRRP','',0,0,1);
+I[16][3][2]=new Array('FGSP','',1,100,1);
+I[16][3][3]=new Array('FGCP in active-passive mode','',0,0,1);
+I[17]=new Array();I[17][0]=100;
+I[17][1]='';
+I[17][2]='3';
+I[17][3]=new Array();
+I[17][3][0]=new Array('Add severity.','',0,0,1);
+I[17][3][1]=new Array('Add attack_ id.','',0,0,1);
+I[17][3][2]=new Array('Ensure that the header syntax is F-SBID.','',1,100,1);
+I[17][3][3]=new Array('Start options with --.','',1,100,1);
+I[18]=new Array();I[18][0]=100;
+I[18][1]='';
+I[18][2]='3';
+I[18][3]=new Array();
+I[18][3][0]=new Array('set prefix 172.16.1.0 255.255.255.0','',1,100,1);
+I[18][3][1]=new Array('set neighbor-group advpn','',1,100,1);
+I[18][3][2]=new Array('set route-reflector-client enable','',0,0,1);
+I[18][3][3]=new Array('set prefix 10.1.0 255.255.254.0','',0,0,1);
+I[19]=new Array();I[19][0]=100;
+I[19][1]='';
+I[19][2]='3';
+I[19][3]=new Array();
+I[19][3][0]=new Array('They can be used as variables in scripts.','',1,100,1);
+I[19][3][1]=new Array('You create them on FortiGate.','',0,0,1);
+I[19][3][2]=new Array('The metadata format is $<metadata variable name>','',1,100,1);
+I[19][3][3]=new Array('They apply only to non-firewall objects.','',0,0,1);
+I[20]=new Array();I[20][0]=100;
+I[20][1]='';
+I[20][2]='3';
+I[20][3]=new Array();
+I[20][3][0]=new Array('It supports NAT for on-demand tunnels.','',1,100,1);
+I[20][3][1]=new Array('Routing is configured by enabling add-advpn-route.','',0,0,1);
+I[20][3][2]=new Array('auto-discovery-receiver must be set to enable on the spokes','',1,100,1);
+I[20][3][3]=new Array('Spoke-to-spoke traffic never goes through the hub','',0,0,1);
+I[21]=new Array();I[21][0]=100;
+I[21][1]='';
+I[21][2]='3';
+I[21][3]=new Array();
+I[21][3][0]=new Array('An automation stitch configured to execute actions in parallel can be set to insert a specific delay','',0,0,1);
+I[21][3][1]=new Array('Automation stitches can be configured on any FortiGate device in a Security Fabric environment.','',0,0,1);
+I[21][3][2]=new Array('Automation stitches can be created to run diagnostic commands and email the results when CPU or memory usage exceeds specified thresholds','',1,100,1);
+I[21][3][3]=new Array('An automation stitch configured to execute actions sequentially can take parameters from previous actions as input for the current action','',1,100,1);
+I[22]=new Array();I[22][0]=100;
+I[22][1]='';
+I[22][2]='0';
+I[22][3]=new Array();
+I[22][3][0]=new Array('Shortcut forward.','',0,0,1);
+I[22][3][1]=new Array('Shortcut offer','',1,100,1);
+I[22][3][2]=new Array('Shortcut reply','',0,0,1);
+I[22][3][3]=new Array('Shortcut query','',0,0,1);
+I[23]=new Array();I[23][0]=100;
+I[23][1]='';
+I[23][2]='0';
+I[23][3]=new Array();
+I[23][3][0]=new Array('Set route-overlap to either use-new or use-old.','',1,100,1);
+I[23][3][1]=new Array('Set single-source to enable.','',0,0,1);
+I[23][3][2]=new Array('Set route-overlap to allow.','',0,0,1);
+I[23][3][3]=new Array('Set net-device to enable','',0,0,1);
+I[24]=new Array();I[24][0]=100;
+I[24][1]='';
+I[24][2]='3';
+I[24][3]=new Array();
+I[24][3][0]=new Array('It supports the XAuth protocol.','',0,0,1);
+I[24][3][1]=new Array('It supports the extensible authentication protocol (EAP).','',1,100,1);
+I[24][3][2]=new Array('Phase 1 includes main mode','',0,0,1);
+I[24][3][3]=new Array('It exchanges a minimum of four messages to establish a secure tunnel','',1,100,1);
+I[25]=new Array();I[25][0]=100;
+I[25][1]='';
+I[25][2]='3';
+I[25][3]=new Array();
+I[25][3][0]=new Array('NGFW-1 is the designated router','',0,0,1);
+I[25][3][1]=new Array('The port3 network has more than one OSPF router','',1,100,1);
+I[25][3][2]=new Array('The interfaces of the OSPF routers match the MTU value that is configured as 1500.','',1,100,1);
+I[25][3][3]=new Array('The OSPF routers are in the area ID of 0.0.0.1.','',0,0,1);
+I[26]=new Array();I[26][0]=100;
+I[26][1]='';
+I[26][2]='3';
+I[26][3]=new Array();
+I[26][3][0]=new Array('set ike-version 2.','',1,100,1);
+I[26][3][1]=new Array('set auto-discovery-receiver enable','',0,0,1);
+I[26][3][2]=new Array('set auto-discovery-forwarder enable','',0,0,1);
+I[26][3][3]=new Array('set auto-discovery-sender enable','',1,100,1);
+I[27]=new Array();I[27][0]=100;
+I[27][1]='';
+I[27][2]='3';
+I[27][3]=new Array();
+I[27][3][0]=new Array('The downstream FortiGate has fabric-object-unification set to local.','',0,0,1);
+I[27][3][1]=new Array('The downstream FortiGate has configuration-sync set to local.','',1,100,1);
+I[27][3][2]=new Array('The address object on the root FortiGate has fabric-object set to disable.','',1,100,1);
+I[27][3][3]=new Array('The root FortiGate has configuration-sync set to enable.','',0,0,1);
+I[28]=new Array();I[28][0]=100;
+I[28][1]='';
+I[28][2]='0';
+I[28][3]=new Array();
+I[28][3][0]=new Array('bfd','',1,100,1);
+I[28][3][1]=new Array('restart-on-topology-change','',0,0,1);
+I[28][3][2]=new Array('rfc1583-compatible','',0,0,1);
+I[28][3][3]=new Array('distribute-list-in','',0,0,1);
+I[29]=new Array();I[29][0]=100;
+I[29][1]='';
+I[29][2]='3';
+I[29][3]=new Array();
+I[29][3][0]=new Array('OSPF interface priority settings are unique','',0,0,1);
+I[29][3][1]=new Array('Authentication settings match','',1,100,1);
+I[29][3][2]=new Array('OSPF router IDs are unique','',1,100,1);
+I[29][3][3]=new Array('OSPF interface network types match','',1,100,1);
+I[29][3][4]=new Array('OSPF link costs match','',0,0,1);
+I[30]=new Array();I[30][0]=100;
+I[30][1]='';
+I[30][2]='0';
+I[30][3]=new Array();
+I[30][3][0]=new Array('Non-DR and non-BDR routers send link state updates and acknowledgements to 224.0.0.6.','',1,100,1);
+I[30][3][1]=new Array('Non-DR and non-BDR routers form full adjacencies to DR only','',0,0,1);
+I[30][3][2]=new Array('FortiGate first checks the OSPF ID to elect a DR.','',0,0,1);
+I[30][3][3]=new Array('Only the DR receives link state information from non-DR routers','',0,0,1);
+I[31]=new Array();I[31][0]=100;
+I[31][1]='';
+I[31][2]='0';
+I[31][3]=new Array();
+I[31][3][0]=new Array('The routers are in the same area ID of 0.0.0.0','',0,0,1);
+I[31][3][1]=new Array('The bfd configuration is set to enable.','',0,0,1);
+I[31][3][2]=new Array('BGP is attempting to establish a TCP connection with the BGP peer','',1,100,1);
+I[31][3][3]=new Array('You must change the AS number to match the remote peer','',0,0,1);
+I[32]=new Array();I[32][0]=100;
+I[32][1]='';
+I[32][2]='0';
+I[32][3]=new Array();
+I[32][3][0]=new Array('Configure remote link monitoring to detect an issue in the forwarding path.','',0,0,1);
+I[32][3][1]=new Array('Verify that the speed and duplex settings match between the FortiGate interfaces and the connected switch ports.','',0,0,1);
+I[32][3][2]=new Array('Configure set send-garp-on-failover enable under config system ha on both cluster members.','',0,0,1);
+I[32][3][3]=new Array('Configure set link-failed-signal enable under config system ha on both cluster members','',1,100,1);
+I[33]=new Array();I[33][0]=100;
+I[33][1]='';
+I[33][2]='0';
+I[33][3]=new Array();
+I[33][3][0]=new Array('The administrator must add both the Domain and IPhex values of 34 to get the category number.','',0,0,1);
+I[33][3][1]=new Array('The administrator must convert the first three digits of the IP hex value to binary.','',0,0,1);
+I[33][3][2]=new Array('The administrator can look up the hex value of 34 in the second command output.','',1,100,1);
+I[33][3][3]=new Array('The administrator must convert the first two digits of the Domain hex value to a decimal value.','',0,0,1);
+I[34]=new Array();I[34][0]=100;
+I[34][1]='';
+I[34][2]='0';
+I[34][3]=new Array();
+I[34][3][0]=new Array('The IKE real time debug shows the phases 1 and 2 negotiations only. It does not show any more output once the tunnel is up','',0,0,1);
+I[34][3][1]=new Array('The IKE real time debug shows error messages only. If it does not provide any output, it indicates that the tunnel is operating normally','',0,0,1);
+I[34][3][2]=new Array('The IKF real time debug shows the phase 1 negotiation only. For information after that, the administrator must use the IPsec real time debug instead: diagnose debug','',0,0,1);
+I[34][3][3]=new Array('The log-filter setting is set incorrectly. The VPN\'s traffic does not match this filter.','',1,100,1);
+I[35]=new Array();I[35][0]=100;
+I[35][1]='';
+I[35][2]='0';
+I[35][3]=new Array();
+I[35][3][0]=new Array('np-accel-mode is set to enable.','',0,0,1);
+I[35][3][1]=new Array('IPS is configured to monitor.','',0,0,1);
+I[35][3][2]=new Array('fail-open is set to disable.','',1,100,1);
+I[35][3][3]=new Array('traffic-submit is set to disable.','',0,0,1);
+I[36]=new Array();I[36][0]=100;
+I[36][1]='';
+I[36][2]='0';
+I[36][3]=new Array();
+I[36][3][0]=new Array('You can disable the NP for each firewall policy using the command np-acceleration set to loose','',0,0,1);
+I[36][3][1]=new Array('For TCP traffic, FortiGate CPU offloads the first packets of SYN/ACK and ACK of the three-way handshake to NP.','',0,0,1);
+I[36][3][2]=new Array('The NP provides IPS signature matching.','',0,0,1);
+I[36][3][3]=new Array('The NP checks the session key or IPSec SA','',1,100,1);
+I[37]=new Array();I[37][0]=100;
+I[37][1]='';
+I[37][2]='3';
+I[37][3]=new Array();
+I[37][3][0]=new Array('The reassembly timeout default value is 30 seconds','',0,0,1);
+I[37][3][1]=new Array('Only some IKE version 2 packets are considered fragmentable','',1,100,1);
+I[37][3][2]=new Array('It is performed at the IP layer','',1,100,1);
+I[37][3][3]=new Array('The maximum number of IKE version 2 fragments is 128','',0,0,1);
+I[38]=new Array();I[38][0]=100;
+I[38][1]='';
+I[38][2]='3';
+I[38][3]=new Array();
+I[38][3][0]=new Array('set add-route enable','',0,0,1);
+I[38][3][1]=new Array('set auto-discovery-sender enable','',1,100,1);
+I[38][3][2]=new Array('set auto-discovery-receiver enable','',0,0,1);
+I[38][3][3]=new Array('set auto-discovery-forwarder enable','',1,100,1);
+I[39]=new Array();I[39][0]=100;
+I[39][1]='';
+I[39][2]='0';
+I[39][3]=new Array();
+I[39][3][0]=new Array('FortiGate joined the Security Fabric and the Finance address object was configured on the root FortiGate.','',1,100,1);
+I[39][3][1]=new Array('You have read-only access.','',0,0,1);
+I[39][3][2]=new Array('FortiGate is registered on FortiManager.','',0,0,1);
+I[39][3][3]=new Array('Another user is editing the Finance address object in workspace mode','',0,0,1);
+I[40]=new Array();I[40][0]=100;
+I[40][1]='';
+I[40][2]='3';
+I[40][3]=new Array();
+I[40][3][0]=new Array('You can apply it in Internal BGP (IBGP) and External BGP (EBGP)','',1,100,1);
+I[40][3][1]=new Array('It is combined with the neighbor-range parameter','',1,100,1);
+I[40][3][2]=new Array('You can configure it on the GUI','',0,0,1);
+I[40][3][3]=new Array('It applies common settings in an OSPF area','',0,0,1);
+I[41]=new Array();I[41][0]=100;
+I[41][1]='';
+I[41][2]='3';
+I[41][3]=new Array();
+I[41][3][0]=new Array('Return traffic to the initiator is sent to 10.1.0.1.','',0,0,1);
+I[41][3][1]=new Array('Return traffic to the initiator is sent to 10.200.1.254.','',0,0,1);
+I[41][3][2]=new Array('It is an ICMP session from 10.1.10.10 to 10.200.5.1','',0,0,1);
+I[41][3][3]=new Array('It is an ICMP session from 10.1.10.10 to 10.200.1.1','',0,0,1);
+I[42]=new Array();I[42][0]=100;
+I[42][1]='';
+I[42][2]='0';
+I[42][3]=new Array();
+I[42][3][0]=new Array('Public FortiGuard servers','',0,0,1);
+I[42][3][1]=new Array('10.0.1.242','',0,0,1);
+I[42][3][2]=new Array('10.0.1.243','',0,0,1);
+I[42][3][3]=new Array('10.0.1.244','',1,100,1);
+I[43]=new Array();I[43][0]=100;
+I[43][1]='';
+I[43][2]='3';
+I[43][3]=new Array();
+I[43][3][0]=new Array('The neighbors displayed are linked to a local router with the neighbor-range set to a value of 4.','',0,0,1);
+I[43][3][1]=new Array('External BGP (EBGP) exchanges routing information.','',1,100,1);
+I[43][3][2]=new Array('The router 100.64.3.1 has the parameter bfd set to enable','',0,0,1);
+I[43][3][3]=new Array('The BGP session with peer 10.127.0.75 is established','',1,100,1);
+I[44]=new Array();I[44][0]=100;
+I[44][1]='';
+I[44][2]='0';
+I[44][3]=new Array();
+I[44][3][0]=new Array('Specify SSH in the Service field.','',0,0,1);
+I[44][3][1]=new Array('Select an application control profile corresponding to SSH in the Security Profiles section.','',0,0,1);
+I[44][3][2]=new Array('Include SSH in the Application field.','',1,100,1);
+I[44][3][3]=new Array('Configure port 22 in the Protocol Options field.','',0,0,1);
+I[45]=new Array();I[45][0]=100;
+I[45][1]='';
+I[45][2]='0';
+I[45][3]=new Array();
+I[45][3][0]=new Array('Configure IP addresses on IPsec virtual interlaces','',0,0,1);
+I[45][3][1]=new Array('Disable add-route on hub','',0,0,1);
+I[45][3][2]=new Array('Set protected network to all','',0,0,1);
+I[45][3][3]=new Array('Enable AD-VPN in IPsec phase 1','',1,100,1);
+I[46]=new Array();I[46][0]=100;
+I[46][1]='';
+I[46][2]='3';
+I[46][3]=new Array();
+I[46][3][0]=new Array('Configure a distribute-list-out.','',1,100,1);
+I[46][3][1]=new Array('Disable Redistribute Connected.','',0,0,1);
+I[46][3][2]=new Array('Configure a route-map-out.','',1,100,1);
+I[46][3][3]=new Array('Remove the 10.1.10.0 prefix from the OSPF n','',0,0,1);
+I[47]=new Array();I[47][0]=100;
+I[47][1]='';
+I[47][2]='0';
+I[47][3]=new Array();
+I[47][3][0]=new Array('FortiGate used 64.26.151.37 as the initial server to validate its contract','',0,0,1);
+I[47][3][1]=new Array('Servers with a negative TZ value are less preferred for rating requests.','',0,0,1);
+I[47][3][2]=new Array('The first server provided to FortiGate when it performed a DNS query looking fThe first server provided to FortiGate when it performed a DNS query looking for a list of rating servers, was 121.111.236.179or a list of rating servers, was 121.111.236.179','',0,0,1);
+I[47][3][3]=new Array('There is a natural correlation between the value in the Packets field and the value in the Weight field','',1,100,1);
+I[48]=new Array();I[48][0]=100;
+I[48][1]='';
+I[48][2]='3';
+I[48][3]=new Array();
+I[48][3][0]=new Array('It supports rating requests from non-FortiGate devices.','',0,0,1);
+I[48][3][1]=new Array('lt can be configured as an update server a rating server or both','',1,100,1);
+I[48][3][2]=new Array('It caches available firmware updates for unmanaged devices','',0,0,1);
+I[48][3][3]=new Array('It provides VM license validation services','',1,100,1);
+I[49]=new Array();I[49][0]=100;
+I[49][1]='';
+I[49][2]='0';
+I[49][3]=new Array();
+I[49][3][0]=new Array('10.2.0.254 is not the next hop for the local router','',1,100,1);
+I[49][3][1]=new Array('The routers are in the same area ID of 0.0.0.0.','',0,0,1);
+I[49][3][2]=new Array('You must change the AS number to match the remote peer.','',0,0,1);
+I[49][3][3]=new Array('The bfd configuration is set to enable.','',0,0,1);
+I[50]=new Array();I[50][0]=100;
+I[50][1]='';
+I[50][2]='0';
+I[50][3]=new Array();
+I[50][3][0]=new Array('Set update-server-location to automatic','',0,0,1);
+I[50][3][1]=new Array('Add server.fortiguard.net to the Server list','',0,0,1);
+I[50][3][2]=new Array('Configure server-type with the rating option','',1,100,1);
+I[50][3][3]=new Array('Configure securewf.fortiguard.net on the default servers','',0,0,1);
+I[51]=new Array();I[51][0]=100;
+I[51][1]='';
+I[51][2]='0';
+I[51][3]=new Array();
+I[51][3][0]=new Array('Create interface mappings for the IPsec VPN interfaces before you use them in a policy','',0,0,1);
+I[51][3][1]=new Array('Install the VPN community and gateway configuration on the FortiGate devices so that the VPN interfaces appear on the Policy Objects on FortiManager.','',1,100,1);
+I[51][3][2]=new Array('Refresh the device status using the Device Manager so that FortiGate populates the IPSec interfaces','',0,0,1);
+I[51][3][3]=new Array('Configure the phase 1 settings in the VPN community that you didn\'t initially configure. FortiGate automatically generates the interfaces after you configure therequired settings.','',0,0,1);
+I[52]=new Array();I[52][0]=100;
+I[52][1]='';
+I[52][2]='0';
+I[52][3]=new Array();
+I[52][3][0]=new Array('fragmentation and fragmentation-mtu','',0,0,1);
+I[52][3][1]=new Array('keepalive and keylive','',0,0,1);
+I[52][3][2]=new Array('fec-ingress and fsc-egress','',1,100,1);
+I[52][3][3]=new Array('dpd and dpd-retryinterval','',0,0,1);
+I[53]=new Array();I[53][0]=100;
+I[53][1]='';
+I[53][2]='0';
+I[53][3]=new Array();
+I[53][3][0]=new Array('The Diffie-Hellman group does not match on the local and remote gateways.','',0,0,1);
+I[53][3][1]=new Array('The encapsulation method for phase 2 is set to none on local and remote gateways.','',0,0,1);
+I[53][3][2]=new Array('The proposal ID does not match between local and remote gateways','',0,0,1);
+I[53][3][3]=new Array('The local gateway has configured less secure encryption and hashing algorithms compared to the remote gateway','',1,100,1);
+I[54]=new Array();I[54][0]=100;
+I[54][1]='';
+I[54][2]='0';
+I[54][3]=new Array();
+I[54][3][0]=new Array('The secondary device has this session synchronized; however, because application control is applied, the session will be marked dirty and have to be reevaluated after failover','',1,100,1);
+I[54][3][1]=new Array('Traffic for this session continues to be permitted on the new primary device after failover, without requiring the client to restart the session with the server','',0,0,1);
+I[54][3][2]=new Array('The session state will be preserved but the kernel will need to re-evaluate thesession due to NAT being applied','',0,0,1);
+I[54][3][3]=new Array('The session will be removed from the session table of the secondary device due to the presence of allowed error packets, which will force the client to restart the session with the server','',0,0,1);
+I[55]=new Array();I[55][0]=100;
+I[55][1]='';
+I[55][2]='0';
+I[55][3]=new Array();
+I[55][3][0]=new Array('Distribute-list-in','',0,0,1);
+I[55][3][1]=new Array('Graceful-restart','',0,0,1);
+I[55][3][2]=new Array('Ebgp-enforce-multihop','',0,0,1);
+I[55][3][3]=new Array('bfd','',1,100,1);
+I[56]=new Array();I[56][0]=100;
+I[56][1]='';
+I[56][2]='3';
+I[56][3]=new Array();
+I[56][3][0]=new Array('FortiGate uses the FortiTelemetry protocol to communicate with FortiAnalyzer','',0,0,1);
+I[56][3][1]=new Array('Only FortiGate devices with configuration-sync set to default receive and synchronize global CMDB objects that the root FortiGate sends','',1,100,1);
+I[56][3][2]=new Array('Only the root FortiGate collects network topology information and forwards it to FortiAnalyzer','',1,100,1);
+I[56][3][3]=new Array('Only the root FortiGate sends logs to FortiAnalyzer','',0,0,1);
+I[57]=new Array();I[57][0]=100;
+I[57][1]='';
+I[57][2]='3';
+I[57][3]=new Array();
+I[57][3][0]=new Array('The commands that start with the # sign did not run','',1,100,1);
+I[57][3][1]=new Array('CLI scripts must start with #!.','',0,0,1);
+I[57][3][2]=new Array('Incomplete commands can cause CLI scripts to fail.','',1,100,1);
+I[57][3][3]=new Array('Static routes can be added using only TCI scripts','',0,0,1);
+I[58]=new Array();I[58][0]=100;
+I[58][1]='';
+I[58][2]='0';
+I[58][3]=new Array();
+I[58][3][0]=new Array('Secondary virtual MAC port1','',0,0,1);
+I[58][3][1]=new Array('Secondary physical MAC port1','',1,100,1);
+I[58][3][2]=new Array('Secondary virtual MAC port1 then physical MAC port1','',0,0,1);
+I[58][3][3]=new Array('Secondary physical MAC port2 then virtual MAC port2','',0,0,1);
+I[59]=new Array();I[59][0]=100;
+I[59][1]='';
+I[59][2]='0';
+I[59][3]=new Array();
+I[59][3][0]=new Array('All the sessions in the session table are TCP sessions.','',0,0,1);
+I[59][3][1]=new Array('162 sessions have been deleted because of memory page exhaustion','',0,0,1);
+I[59][3][2]=new Array('There are 166 TCP sessions waiting to complete the three-way handshake','',0,0,1);
+I[59][3][3]=new Array('There are two sessions that have not been removed in case of any out-of-order packets that arrive','',1,100,1);
+I[60]=new Array();I[60][0]=100;
+I[60][1]='';
+I[60][2]='0';
+I[60][3]=new Array();
+I[60][3][0]=new Array('To load balance both sessions and configuration synchronization between layer 2 and 3','',0,0,1);
+I[60][3][1]=new Array('To have both sessions and configuration synchronization in layer 2','',1,100,1);
+I[60][3][2]=new Array('To have both sessions and configuration synchronization in layer 3','',0,0,1);
+I[60][3][3]=new Array('To have only configuration synchronization in layer 3','',0,0,1);
+I[61]=new Array();I[61][0]=100;
+I[61][1]='';
+I[61][2]='0';
+I[61][3]=new Array();
+I[61][3][0]=new Array('FortiGate closes the connection because this represents an invalid SSL/TLS configuration','',0,0,1);
+I[61][3][1]=new Array('FortiGate uses the SNI from the user\'s web browser.','',0,0,1);
+I[61][3][2]=new Array('FortiGate uses the CN information from the Subject field in the server certificate','',1,100,1);
+I[61][3][3]=new Array('FortiGate uses the first entry listed in the SAN field in the server certificate','',0,0,1);
+I[62]=new Array();I[62][0]=100;
+I[62][1]='';
+I[62][2]='3';
+I[62][3]=new Array();
+I[62][3][0]=new Array('It allows failure detection in less than one second.','',1,100,1);
+I[62][3][1]=new Array('The two routers must be connected to the same subnet','',0,0,1);
+I[62][3][2]=new Array('It is supported for neighbors over multiple hops','',1,100,1);
+I[62][3][3]=new Array('It detects only two-way failures.','',0,0,1);
+I[63]=new Array();I[63][0]=100;
+I[63][1]='';
+I[63][2]='0';
+I[63][3]=new Array();
+I[63][3][0]=new Array('Neighbors maintain communication with the restarting router.','',0,0,1);
+I[63][3][1]=new Array('The restarting router sends gratuitous ARP for 30 seconds.','',0,0,1);
+I[63][3][2]=new Array('The router sends grace LSAs before it restarts.','',1,100,1);
+I[63][3][3]=new Array('FortiGate restarts if the topology changes.','',0,0,1);
+I[64]=new Array();I[64][0]=100;
+I[64][1]='';
+I[64][2]='3';
+I[64][3]=new Array();
+I[64][3][0]=new Array('You must configure phase 2 quick mode selectors to 0.0.0.0 0.0.0.0.','',1,100,1);
+I[64][3][1]=new Array('You must disable add-route in the hub','',1,100,1);
+I[64][3][2]=new Array('All FortiGate devices must be in the same autonomous system (AS).','',0,0,1);
+I[64][3][3]=new Array('The hub adds routes based on IKE negotiations.','',0,0,1);
+I[65]=new Array();I[65][0]=100;
+I[65][1]='';
+I[65][2]='0';
+I[65][3]=new Array();
+I[65][3][0]=new Array('The FortiGate devices performing network address translation (NAT) or unified threat management (UTM), if configured.','',0,0,1);
+I[65][3][1]=new Array('Only the last FortiGate that handled a session in the Security Fabric','',0,0,1);
+I[65][3][2]=new Array('Only the root FortiGate','',0,0,1);
+I[65][3][3]=new Array('Each FortiGate in the Security Fabric.','',1,100,1);
+
+
+function StartUp(){
+
+//If there's only one question, no need for question navigation controls
+	if (QsToShow < 2){
+		document.getElementById('QNav').style.display = 'none';
+	}
+	
+//Stash the instructions so they can be redisplayed
+	strInstructions = document.getElementById('InstructionsDiv').innerHTML;
+	
+
+	
+
+	
+
+	PreloadImages('01.JPG','02.JPG','03.JPG','04.JPG','05.JPG','06.JPG','07.JPG','08.JPG','09.JPG','10A.JPG','10B.JPG','11.JPG','12.JPG','13.JPG','14.JPG','15.JPG','16.JPG','17.JPG','19.JPG','20.JPG','21.JPG','22.JPG','23.JPG','24.JPG','25.jpg','26.JPG','27.JPG','28.JPG','29.JPG','30.JPG','31.JPG','32.JPG','33.JPG','34.JPG','35.JPG','36.JPG','37.JPG','38.JPG','39.JPG','40.JPG');
+
+	
+	CompleteEmptyFeedback();
+
+	SetUpQuestions();
+	ClearTextBoxes();
+	CreateStatusArray();
+	
+
+	
+//Check search string for q parameter
+	if (document.location.search.length > 0){
+		if (ShuffleQs == false){
+			var JumpTo = parseInt(document.location.search.substring(1,document.location.search.length))-1;
+			if (JumpTo <= QsToShow){
+				ChangeQ(JumpTo);
+			}
+		}
+	}
+//Undocumented function added 10/12/2004
+	ShowSpecialReadingForQuestion();
+}
+
+function ShowHideQuestions(){
+	document.getElementById('ShowMethodButton').style.display = 'none';
+	if (ShowingAllQuestions == false){
+		for (var i=0; i<QArray.length; i++){
+				QArray[i].style.display = '';
+			}
+		document.getElementById('Questions').style.listStyleType = 'decimal';
+		document.getElementById('OneByOneReadout').style.display = 'none';
+		document.getElementById('ShowMethodButton').innerHTML = ShowOneByOneCaption;
+		ShowingAllQuestions = true;
+	}
+	else{
+		for (var i=0; i<QArray.length; i++){
+				if (i != CurrQNum){
+					QArray[i].style.display = 'none';
+				}
+			}
+		document.getElementById('Questions').style.listStyleType = 'none';
+		document.getElementById('OneByOneReadout').style.display = '';
+		document.getElementById('ShowMethodButton').innerHTML = ShowAllQuestionsCaption;
+		ShowingAllQuestions = false;	
+	}
+	document.getElementById('ShowMethodButton').style.display = 'inline';
+}
+
+function CreateStatusArray(){
+	var QNum, ANum;
+//For each item in the item array
+	for (QNum=0; QNum<I.length; QNum++){
+//Check if the question still exists (hasn't been nuked by showing a random selection)
+		if (document.getElementById('Q_' + QNum) != null){
+			State[QNum] = new Array();
+			State[QNum][0] = -1; //Score for this q; -1 shows question not done yet
+			State[QNum][1] = new Array(); //answers
+			for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+				State[QNum][1][ANum] = 0; //answer not chosen yet; when chosen, will store its position in the series of choices
+			}
+			State[QNum][2] = 0; //tries at this q so far
+			State[QNum][3] = 0; //incrementing percent-correct values of selected answers
+			State[QNum][4] = 0; //penalties incurred for hints
+			State[QNum][5] = ''; //Sequence of answers chosen by number
+		}
+		else{
+			State[QNum] = null;
+		}
+	}
+}
+
+
+
+function CheckMCAnswer(QNum, ANum, Btn){
+//if question doesn't exist, bail
+	if (State[QNum].length < 1){return;}
+	
+//Get the feedback
+	Feedback = I[QNum][3][ANum][1];
+	
+//Now show feedback and bail if question already complete
+	if (State[QNum][0] > -1){
+//Add an extra message explaining that the question
+// is finished if defined by the user
+		if (strQuestionFinished.length > 0){Feedback += '<br />' + strQuestionFinished;}
+//Show the feedback
+		ShowMessage(Feedback);
+//New for 6.2.2.1: If you want to mark an answer as correct even when it's the final choice, uncomment this line.
+//		if (I[QNum][3][ANum][2] >= 1){Btn.innerHTML = CorrectIndicator;}else{Btn.innerHTML = IncorrectIndicator;}	
+		return;
+	}
+	
+//Hide the button while processing
+	Btn.style.display = 'none';
+
+//Increment the number of tries
+	State[QNum][2]++;
+	
+//Add the percent-correct value of this answer
+	State[QNum][3] += I[QNum][3][ANum][3];
+	
+//Store the try number in the answer part of the State array, for tracking purposes
+	State[QNum][1][ANum] = State[QNum][2];
+	if (State[QNum][5].length > 0){State[QNum][5] += ' | ';}
+	State[QNum][5] += String.fromCharCode(65+ANum);
+	
+//Should this answer be accepted as correct?
+	if (I[QNum][3][ANum][2] < 1){
+//It's wrong
+
+//Mark the answer
+		Btn.innerHTML = IncorrectIndicator;
+		
+//Remove any previous score unless exercise is finished (6.0.3.8+)
+		if (Finished == false){
+			WriteToInstructions(strInstructions);
+		}	
+		
+//Check whether this leaves just one MC answer unselected, in which case the Q is terminated
+		var RemainingAnswer = FinalAnswer(QNum);
+		if (RemainingAnswer > -1){
+//Behave as if the last answer had been selected, but give no credit for it
+//Increment the number of tries
+			State[QNum][2]++;		
+		
+//Calculate the score for this question
+			CalculateMCQuestionScore(QNum);
+			
+//Get the overall score and add it to the feedback
+			CalculateOverallScore();
+//New for 6.2.2.1
+			var QsDone = CheckQuestionsCompleted();
+			if ((ContinuousScoring == true)||(Finished == true)){
+				Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+				WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+			}
+			else{
+				WriteToInstructions(QsDone);
+			}
+		}
+	}
+	else{
+//It's right
+//Mark the answer
+		Btn.innerHTML = CorrectIndicator;
+				
+//Calculate the score for this question
+		CalculateMCQuestionScore(QNum);
+		
+//New for 6.2.2.0
+		var QsDone = CheckQuestionsCompleted();
+
+//Get the overall score and add it to the feedback
+		if (ContinuousScoring == true){
+			CalculateOverallScore();
+			if ((ContinuousScoring == true)||(Finished == true)){
+				Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+				WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+			}
+		}
+		else{
+			WriteToInstructions(QsDone);
+		}
+	}
+	
+//Show the button again
+	Btn.style.display = 'inline';
+	
+//Finally, show the feedback	
+	ShowMessage(Feedback);
+	
+//Check whether all questions are now done
+	CheckFinished();
+}
+
+function CalculateMCQuestionScore(QNum){
+	var Tries = State[QNum][2] + State[QNum][4]; //include tries and hint penalties
+	var PercentCorrect = State[QNum][3];
+	var TotAns = GetTotalMCAnswers(QNum);
+	var HintPenalties = State[QNum][4];
+	
+//Make sure it's not already complete
+
+	if (State[QNum][0] < 0){
+//Allow for Hybrids
+		if (HintPenalties >= 1){
+			State[QNum][0] = 0;
+		}
+		else{
+//This line calculates the score for this question
+			if (TotAns == 1){
+				State[QNum][0] = 1;
+			}
+			else{
+				State[QNum][0] = ((TotAns-((Tries*100)/State[QNum][3]))/(TotAns-1));
+			}
+		}
+//Fix for Safari bug added for version 6.0.3.42 (negative infinity problem)
+		if ((State[QNum][0] < 0)||(State[QNum][0] == Number.NEGATIVE_INFINITY)){
+			State[QNum][0] = 0;
+		}
+	}
+}
+
+function GetTotalMCAnswers(QNum){
+	var Result = 0;
+	for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+		if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+			Result++;
+		}
+	}
+	return Result;
+}
+
+function FinalAnswer(QNum){
+	var UnchosenAnswers = 0;
+	var FinalAnswer = -1;
+	for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+		if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+			if (State[QNum][1][ANum] < 1){ //This answer hasn't been chosen yet
+				UnchosenAnswers++;
+				FinalAnswer = ANum;
+			}
+		}
+	}
+	if (UnchosenAnswers == 1){
+		return FinalAnswer;
+	}
+	else{
+		return -1;
+	}
+}
+
+
+
+
+
+function CheckMultiSelAnswer(QNum){
+//bail if question doesn't exist or exercise finished
+	if ((State[QNum].length < 1)||(Finished == true)){return;}
+
+//Increment the tries for this question
+	State[QNum][2]++;
+	
+	var ShouldBeChecked;
+	var Matches = 0;
+	if (State[QNum][5].length > 0){State[QNum][5] += ' | ';}
+	
+//Check if there are any mismatches
+	Feedback = '';
+	var CheckBox = null;
+	for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+		CheckBox = document.getElementById('Q_' + QNum + '_' + ANum + '_Chk');
+		if (CheckBox.checked == true){
+			State[QNum][5] += 'Y';
+		}
+		else{
+			State[QNum][5] += 'N';
+		}
+		ShouldBeChecked = (I[QNum][3][ANum][2] == 1);
+		if (ShouldBeChecked == CheckBox.checked){
+			Matches++;
+		}
+		else{
+			Feedback = I[QNum][3][ANum][1];
+		}
+	}
+//Add the hit readout
+	Feedback = Matches + ' / ' + I[QNum][3].length + '<br />' + Feedback;
+	if (Matches == I[QNum][3].length){
+//It's right
+		CalculateMultiSelQuestionScore(QNum);
+		
+//New for 6.2.2.0
+		var QsDone = CheckQuestionsCompleted();
+		
+		if (ContinuousScoring == true){
+			CalculateOverallScore();
+			if ((ContinuousScoring == true)||(Finished == true)){
+				Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+				WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+			}
+			else{
+				WriteToInstructions(QsDone);
+			}
+		}
+	}
+	else{
+//It's wrong -- Remove any previous score unless exercise is finished (6.0.3.8+)
+		if (Finished == false){
+			WriteToInstructions(strInstructions);
+		}	
+	}
+		
+//Show the feedback
+	ShowMessage(Feedback);
+	
+//Check whether all questions are now done
+	CheckFinished();
+}
+
+function CalculateMultiSelQuestionScore(QNum){
+	var Tries = State[QNum][2];
+	var TotAns = State[QNum][1].length;
+	
+//Make sure it's not already complete
+	if (State[QNum][0] < 0){
+		State[QNum][0] = (TotAns - (Tries-1)) / TotAns;
+		if (State[QNum][0] < 0){
+			State[QNum][0] = 0;
+		}
+	}
+}
+
+
+
+function CalculateOverallScore(){
+	var TotalWeighting = 0;
+	var TotalScore = 0;
+	
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] > -1){
+				TotalWeighting += I[QNum][0];
+				TotalScore += (I[QNum][0] * State[QNum][0]);
+			}
+		}
+	}
+	if (TotalWeighting > 0){
+		Score = Math.floor((TotalScore/TotalWeighting)*100);
+	}
+	else{
+//if TotalWeighting is 0, no questions so far have any value, so 
+//no penalty should be shown.
+		Score = 100; 
+	}
+}
+
+//New for 6.2.2.0
+function CheckQuestionsCompleted(){
+	if (ShowCompletedSoFar == false){return '';}
+	var QsCompleted = 0;
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] >= 0){
+				QsCompleted++;
+			}
+		}
+	}
+//Fixes for 6.2.2.2
+	if (QsCompleted >= QArray.length){
+		return ExerciseCompleted;
+	}
+	else{
+		return CompletedSoFar + ' ' + QsCompleted + '/' + QArray.length + '.';
+	}
+}
+
+function CheckFinished(){
+	var FB = '';
+	var AllDone = true;
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] < 0){
+				AllDone = false;
+			}
+		}
+	}
+	if (AllDone == true){
+	
+//Report final score and submit if necessary
+		CalculateOverallScore();
+		FB = YourScoreIs + ' ' + Score + '%.';
+		if (ShowCorrectFirstTime == true){
+			var CFT = 0;
+			for (QNum=0; QNum<State.length; QNum++){
+				if (State[QNum] != null){
+					if (State[QNum][0] >= 1){
+						CFT++;
+					}
+				}
+			}
+			FB += '<br />' + CorrectFirstTime + ' ' + CFT + '/' + QsToShow;
+		}
+		
+//New for 6.2.2.0
+		FB += '<br />' + ExerciseCompleted;
+		
+		WriteToInstructions(FB);
+		
+		Finished == true;
+
+
+
+
+		TimeOver = true;
+		Locked = true;
+		
+
+
+		Finished = true;
+		Detail = '<?xml version="1.0"?><hpnetresult><fields>';
+		for (QNum=0; QNum<State.length; QNum++){
+			if (State[QNum] != null){
+				if (State[QNum][5].length > 0){
+					Detail += '<field><fieldname>Question #' + (QNum+1) + '</fieldname><fieldtype>question-tracking</fieldtype><fieldlabel>Q ' + (QNum+1) + '</fieldlabel><fieldlabelid>QuestionTrackingField</fieldlabelid><fielddata>' + State[QNum][5] + '</fielddata></field>';
+				}
+			}
+		}
+		Detail += '</fields></hpnetresult>';
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+
+<body onload="StartUp()" id="TheBody" >
+
+<!-- BeginTopNavButtons -->
+
+
+<div class="NavButtonBar" id="TopNavBar">
+
+
+
+
+<button class="NavButton" onclick="location='contents.htm'; return false;"> Index </button>
+
+
+
+<button class="NavButton" onclick="location='nextpage.htm'; return false;">=&gt;</button>
+
+
+</div>
+
+
+
+<!-- EndTopNavButtons -->
+
+<div class="Titles">
+	<h2 class="ExerciseTitle">NSE 7</h2>
+
+	<h3 class="ExerciseSubtitle">Quiz</h3>
+
+
+
+</div>
+
+<div id="InstructionsDiv" class="StdDiv">
+	<div id="Instructions"></div>
+</div>
+
+
+<div id="ContainerDiv">
+
+
+
+<div class="ExerciseContainer">
+
+<div id="QNav" class="QuestionNavigation">
+
+<p style="text-align: right;">
+<button id="ShowMethodButton" class="FuncButton" onclick="ShowHideQuestions(); return false;">Show all questions</button>
+</p>
+
+<div id="OneByOneReadout">
+<button id="PrevQButton" class="FuncButton" onclick="ChangeQ(-1); return false;">&lt;=</button>
+
+<span id="QNumReadout" class="QNum">&#160;</span>
+
+<button id="NextQButton" class="FuncButton" onclick="ChangeQ(1); return false;">=&gt;</button>
+<br />
+</div>
+
+</div>
+ 
+<ol class="QuizQuestions" id="Questions">
+<li class="QuizQuestion" id="Q_0" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows a partial web filter profile configuration What can you conclude from this configuration about access to www.facebook.com, which is categorized as Social Networking? <img src="01.JPG" alt="01.JPG" title="01" width="440" height="448"/><br /></div><ol class="MCAnswers"><li id="Q_0_0"><button class="FuncButton" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">?</button>&#160;&#160;The access is allowed based on the FortiGuard Category Based Filter configuration</li><li id="Q_0_1"><button class="FuncButton" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">?</button>&#160;&#160;The access is blocked based on the Content Filter configuration</li><li id="Q_0_2"><button class="FuncButton" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">?</button>&#160;&#160;The access is blocked based on the URL Filter configuration</li><li id="Q_0_3"><button class="FuncButton" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">?</button>&#160;&#160;The access is hocked if the local or the public FortiGuard server does not reply</li></ol></li>
+<li class="QuizQuestion" id="Q_1" style="display: none;"><div class="QuestionText">You want to block access to the website www.eicar.org using a custom<br />IPS signature. Which custom IPS signature should you configure?</div><ol class="MCAnswers"><li id="Q_1_0"><button class="FuncButton" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">?</button>&#160;&#160;F-SBID(--name "eicar": --protocol udp; --flow from_ server; --pattern "eicar"; --<br />context host;)</li><li id="Q_1_1"><button class="FuncButton" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">?</button>&#160;&#160;F-SBID(--name "detect_ eicar"; --protocol tcp; --service dns; --flow from_ server; -- pattern "eicar"; --no_ case;)</li><li id="Q_1_2"><button class="FuncButton" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">?</button>&#160;&#160;F-SBID(--name "detect_ eicar"; --protocol udp; --service ssl; --flow from client; -- pattern "www.eicar.org"; --no_ case; --context host;).</li><li id="Q_1_3"><button class="FuncButton" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">?</button>&#160;&#160;F-SBID(--name "eicar"; protocol tcp; --service HTTP; --flow from client; --pattern "www.eicar.org"; --no_ case; --context host;)</li></ol></li>
+<li class="QuizQuestion" id="Q_2" style="display: none;"><div class="QuestionText">How are bulk configuration changes made using FortiManager CLI scripts?<br />(Choose two.)</div><ol class="MSelAnswers"><li id="Q_2_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_2_0_Chk" class="MSelCheckbox" />When run on the Remote FortiGate directly, administrators do not have the option to review the changes prior to installation.</div></form></li><li id="Q_2_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_2_1_Chk" class="MSelCheckbox" />When run on the Device Database, changes are applied directly to the managed FortiGate device.</div></form></li><li id="Q_2_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_2_2_Chk" class="MSelCheckbox" />When run on the Policy Package, ADOM database, you must use the installation wizard to apply the changes to the managed FortiGate device.</div></form></li><li id="Q_2_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_2_3_Chk" class="MSelCheckbox" />When run on the All FortiGate in ADOM, changes are automatically installed without the creation of a new revision history</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(2)">Check</button></li>
+<li class="QuizQuestion" id="Q_3" style="display: none;"><div class="QuestionText">Which configuration can be used to reduce the number of BGP sessions in<br />on IBGP network?</div><ol class="MCAnswers"><li id="Q_3_0"><button class="FuncButton" id="Q_3_0_Btn" onclick="CheckMCAnswer(3,0,this)">?</button>&#160;&#160;Route-reflector enable</li><li id="Q_3_1"><button class="FuncButton" id="Q_3_1_Btn" onclick="CheckMCAnswer(3,1,this)">?</button>&#160;&#160;Route-reflector-peer enable</li><li id="Q_3_2"><button class="FuncButton" id="Q_3_2_Btn" onclick="CheckMCAnswer(3,2,this)">?</button>&#160;&#160;Route-reflector-client enable</li><li id="Q_3_3"><button class="FuncButton" id="Q_3_3_Btn" onclick="CheckMCAnswer(3,3,this)">?</button>&#160;&#160;Route-reflector-server enable</li></ol></li>
+<li class="QuizQuestion" id="Q_4" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains the output of the diagnose vpn tunnel<br />list. Which command will capture ESP traffic for the VPN named DialUp_0? <img src="02.JPG" alt="02.JPG" title="02" width="988" height="431"/></div><ol class="MCAnswers"><li id="Q_4_0"><button class="FuncButton" id="Q_4_0_Btn" onclick="CheckMCAnswer(4,0,this)">?</button>&#160;&#160;diagnose sniffer packet any &#x2018;host 10.0.10.10&#x2019;</li><li id="Q_4_1"><button class="FuncButton" id="Q_4_1_Btn" onclick="CheckMCAnswer(4,1,this)">?</button>&#160;&#160;diagnose sniffer packet any &#x2018;esp and host 10.200.3.2&#x2019;</li><li id="Q_4_2"><button class="FuncButton" id="Q_4_2_Btn" onclick="CheckMCAnswer(4,2,this)">?</button>&#160;&#160;diagnose sniffer packet any &#x2018;ip proto 50&#x2019;</li><li id="Q_4_3"><button class="FuncButton" id="Q_4_3_Btn" onclick="CheckMCAnswer(4,3,this)">?</button>&#160;&#160;diagnose sniffer packet any &#x2018;port 4500</li></ol></li>
+<li class="QuizQuestion" id="Q_5" style="display: none;"><div class="QuestionText">Examine the output of the 'get router info ospf interface' command shown <br />in the exhibit; then answer the question below. Which statements are true<br />regarding the above output? (Choose two.) <img src="03.JPG" alt="03.JPG" title="03" width="853" height="400"/></div><ol class="MSelAnswers"><li id="Q_5_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_5_0_Chk" class="MSelCheckbox" />The local FortiGate has been elected as the OSPF backup designated router</div></form></li><li id="Q_5_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_5_1_Chk" class="MSelCheckbox" />Two OSPF routers are down in the port4 network</div></form></li><li id="Q_5_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_5_2_Chk" class="MSelCheckbox" />The port4 interface is connected to the OSPF backbone area</div></form></li><li id="Q_5_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_5_3_Chk" class="MSelCheckbox" />There are at least 5 OSPF routers connected to the port4 network</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(5)">Check</button></li>
+<li class="QuizQuestion" id="Q_6" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows a partial routing table. What two conclusions can you draw from the corresponding FortiGate configuration? (Choose two.) <img src="04.JPG" alt="04.JPG" title="04" width="1032" height="297"/></div><ol class="MSelAnswers"><li id="Q_6_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_6_0_Chk" class="MSelCheckbox" />add-route is disabled in the tunnel IPSec phase 1 configuration.</div></form></li><li id="Q_6_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_6_1_Chk" class="MSelCheckbox" />OSPF is configured to run over IPSec.</div></form></li><li id="Q_6_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_6_2_Chk" class="MSelCheckbox" />net-device is enabled in the tunnel IPSec phase 1 configuration.</div></form></li><li id="Q_6_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_6_3_Chk" class="MSelCheckbox" />IPSec tunnel aggregation is configured.</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(6)">Check</button></li>
+<li class="QuizQuestion" id="Q_7" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains information about an IPsec VPN tunnel. What two conclusions can you draw from the command output? (Choose two.) <img src="05.JPG" alt="05.JPG" title="05" width="1021" height="379"/></div><ol class="MSelAnswers"><li id="Q_7_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_7_0_Chk" class="MSelCheckbox" />Dead peer detection is set to enable</div></form></li><li id="Q_7_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_7_1_Chk" class="MSelCheckbox" />Forward error correction in phase 2 is set to enable</div></form></li><li id="Q_7_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_7_2_Chk" class="MSelCheckbox" />Both IPsec SAs are loaded on the kernel</div></form></li><li id="Q_7_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_7_3_Chk" class="MSelCheckbox" />The IKE version is 2</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(7)">Check</button></li>
+<li class="QuizQuestion" id="Q_8" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows an error in system fortiguard configuration. What is the reason you cannot set the protocol to udp in config system fortiguard? <img src="06.JPG" alt="06.JPG" title="06" width="981" height="252"/></div><ol class="MCAnswers"><li id="Q_8_0"><button class="FuncButton" id="Q_8_0_Btn" onclick="CheckMCAnswer(8,0,this)">?</button>&#160;&#160;fortiguard-anycast is set to enable.</li><li id="Q_8_1"><button class="FuncButton" id="Q_8_1_Btn" onclick="CheckMCAnswer(8,1,this)">?</button>&#160;&#160;FortiManager provides FortiGuard</li><li id="Q_8_2"><button class="FuncButton" id="Q_8_2_Btn" onclick="CheckMCAnswer(8,2,this)">?</button>&#160;&#160;You do not have the corresponding write access.</li><li id="Q_8_3"><button class="FuncButton" id="Q_8_3_Btn" onclick="CheckMCAnswer(8,3,this)">?</button>&#160;&#160;udp is not a protocol option.</li></ol></li>
+<li class="QuizQuestion" id="Q_9" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains a partial VPN configuration. What can<br />you conclude from this configuration? <img src="07.JPG" alt="07.JPG" title="07" width="867" height="446"/></div><ol class="MCAnswers"><li id="Q_9_0"><button class="FuncButton" id="Q_9_0_Btn" onclick="CheckMCAnswer(9,0,this)">?</button>&#160;&#160;The routing table shows a single IPSec virtual interface</li><li id="Q_9_1"><button class="FuncButton" id="Q_9_1_Btn" onclick="CheckMCAnswer(9,1,this)">?</button>&#160;&#160;Dead peer detection is disabled</li><li id="Q_9_2"><button class="FuncButton" id="Q_9_2_Btn" onclick="CheckMCAnswer(9,2,this)">?</button>&#160;&#160;FortiGate creates separate virtual interfaces for each dial-up client</li><li id="Q_9_3"><button class="FuncButton" id="Q_9_3_Btn" onclick="CheckMCAnswer(9,3,this)">?</button>&#160;&#160;The VPN should use the dynamic routing protocol to exchange routing information through the tunnels</li></ol></li>
+<li class="QuizQuestion" id="Q_10" style="display: none;"><div class="QuestionText">Which two statements about bfd are true? (Choose two.) *</div><ol class="MSelAnswers"><li id="Q_10_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_10_0_Chk" class="MSelCheckbox" />It can support neighbors only over the next hop in BGP.</div></form></li><li id="Q_10_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_10_1_Chk" class="MSelCheckbox" />You must configure it globally only.</div></form></li><li id="Q_10_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_10_2_Chk" class="MSelCheckbox" />It works for OSPF and BGP.</div></form></li><li id="Q_10_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_10_3_Chk" class="MSelCheckbox" />You can disable it at the protocol level.</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(10)">Check</button></li>
+<li class="QuizQuestion" id="Q_11" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains the partial interface configuration of<br />two FortiGate devices. Which two conclusions can you draw from this<br />configuration? (Choose two.) <img src="08.JPG" alt="08.JPG" title="08" width="830" height="461"/></div><ol class="MSelAnswers"><li id="Q_11_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_11_0_Chk" class="MSelCheckbox" />By default, FortiGate-B is the primary virtual router</div></form></li><li id="Q_11_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_11_1_Chk" class="MSelCheckbox" />The VRRP domain uses the physical MAC address of the primary FortiGate</div></form></li><li id="Q_11_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_11_2_Chk" class="MSelCheckbox" />On failover, new primary device uses the same MAC address as the old primary</div></form></li><li id="Q_11_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_11_3_Chk" class="MSelCheckbox" />10.1.5.254 is the default gateway of the internal network.</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(11)">Check</button></li>
+<li class="QuizQuestion" id="Q_12" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains a partial BGP configuration. Which two *1/1<br />parameters must you set in the BGP configuration? (Choose two.) <img src="09.JPG" alt="09.JPG" title="09" width="691" height="347"/></div><ol class="MSelAnswers"><li id="Q_12_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_12_0_Chk" class="MSelCheckbox" />update-source</div></form></li><li id="Q_12_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_12_1_Chk" class="MSelCheckbox" />recursive-next-hop</div></form></li><li id="Q_12_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_12_2_Chk" class="MSelCheckbox" />ebgp-enforce-multihop</div></form></li><li id="Q_12_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_12_3_Chk" class="MSelCheckbox" />ibgp-enforce-multihop</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(12)">Check</button></li>
+<li class="QuizQuestion" id="Q_13" style="display: none;"><div class="QuestionText">Refer to the exhibits, which contain the network topology and BGP<br />configuration for a hub. An administrator is trying to configure ADVPN with<br />a hub and spoke VPN setup using iBGP. All the VPNs are up and connected<br />to the hub. The hub is receiving route information from both spokes over<br />iBGP; however the spokes are not receiving route information from each other. What change must the administrator make to the hub BGP configuration so<br />that the routes learned from one spoke are forwarded to the other spoke? <img src="10A.JPG" alt="10A.JPG" title="10A" width="398" height="254"/> <img src="10B.JPG" alt="10B.JPG" title="10B" width="343" height="358"/></div><ol class="MCAnswers"><li id="Q_13_0"><button class="FuncButton" id="Q_13_0_Btn" onclick="CheckMCAnswer(13,0,this)">?</button>&#160;&#160;Configure the hub as a route reflector</li><li id="Q_13_1"><button class="FuncButton" id="Q_13_1_Btn" onclick="CheckMCAnswer(13,1,this)">?</button>&#160;&#160;Configure auto-discovery-sender on the hub</li><li id="Q_13_2"><button class="FuncButton" id="Q_13_2_Btn" onclick="CheckMCAnswer(13,2,this)">?</button>&#160;&#160;Enable route redistribution under config router bgp</li><li id="Q_13_3"><button class="FuncButton" id="Q_13_3_Btn" onclick="CheckMCAnswer(13,3,this)">?</button>&#160;&#160;Add a prefix list to the hub that permits routes to be shared between the spokes</li></ol></li>
+<li class="QuizQuestion" id="Q_14" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains a partial configuration of the global<br />system. What can you conclude from this output?<img src="11.JPG" alt="11.JPG" title="11" width="430" height="171"/></div><ol class="MCAnswers"><li id="Q_14_0"><button class="FuncButton" id="Q_14_0_Btn" onclick="CheckMCAnswer(14,0,this)">?</button>&#160;&#160;Only NPs are disabled</li><li id="Q_14_1"><button class="FuncButton" id="Q_14_1_Btn" onclick="CheckMCAnswer(14,1,this)">?</button>&#160;&#160;Only CPs are disabled</li><li id="Q_14_2"><button class="FuncButton" id="Q_14_2_Btn" onclick="CheckMCAnswer(14,2,this)">?</button>&#160;&#160;NPs and CPs are disabled.</li><li id="Q_14_3"><button class="FuncButton" id="Q_14_3_Btn" onclick="CheckMCAnswer(14,3,this)">?</button>&#160;&#160;NPS and CPs are enabled.</li></ol></li>
+<li class="QuizQuestion" id="Q_15" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains a TCL script configuration on FortiManager. An administrator has configured the TCL script on FortiManager, but the TCL script failed to apply any changes to the managed device after being run. Why did the TCL script fail to make any changes to the managed device <img src="12.JPG" alt="12.JPG" title="12" width="428" height="257"/></div><ol class="MCAnswers"><li id="Q_15_0"><button class="FuncButton" id="Q_15_0_Btn" onclick="CheckMCAnswer(15,0,this)">?</button>&#160;&#160;The TCL script must start with #include.</li><li id="Q_15_1"><button class="FuncButton" id="Q_15_1_Btn" onclick="CheckMCAnswer(15,1,this)">?</button>&#160;&#160;The TCL procedure lacks the required loop statements to iterate through the<br />changes.</li><li id="Q_15_2"><button class="FuncButton" id="Q_15_2_Btn" onclick="CheckMCAnswer(15,2,this)">?</button>&#160;&#160;There is no corresponding #! to signify the end of the script.</li><li id="Q_15_3"><button class="FuncButton" id="Q_15_3_Btn" onclick="CheckMCAnswer(15,3,this)">?</button>&#160;&#160;The TCL procedure run_ cmd has not been created</li></ol></li>
+<li class="QuizQuestion" id="Q_16" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows a network diagram. * <img src="13.JPG" alt="13.JPG" title="13" width="430" height="170"/></div><ol class="MCAnswers"><li id="Q_16_0"><button class="FuncButton" id="Q_16_0_Btn" onclick="CheckMCAnswer(16,0,this)">?</button>&#160;&#160;FGCP in active-active mode</li><li id="Q_16_1"><button class="FuncButton" id="Q_16_1_Btn" onclick="CheckMCAnswer(16,1,this)">?</button>&#160;&#160;VRRP</li><li id="Q_16_2"><button class="FuncButton" id="Q_16_2_Btn" onclick="CheckMCAnswer(16,2,this)">?</button>&#160;&#160;FGSP</li><li id="Q_16_3"><button class="FuncButton" id="Q_16_3_Btn" onclick="CheckMCAnswer(16,3,this)">?</button>&#160;&#160;FGCP in active-passive mode</li></ol></li>
+<li class="QuizQuestion" id="Q_17" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows a custom signature. Which two<br />modifications must you apply to the configuration of this custom signature<br />so that you can save it on FortiGate? (Choose two.)<img src="14.JPG" alt="14.JPG" title="14" width="575" height="152"/></div><ol class="MSelAnswers"><li id="Q_17_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_17_0_Chk" class="MSelCheckbox" />Add severity.</div></form></li><li id="Q_17_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_17_1_Chk" class="MSelCheckbox" />Add attack_ id.</div></form></li><li id="Q_17_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_17_2_Chk" class="MSelCheckbox" />Ensure that the header syntax is F-SBID.</div></form></li><li id="Q_17_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_17_3_Chk" class="MSelCheckbox" />Start options with --.</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(17)">Check</button></li>
+<li class="QuizQuestion" id="Q_18" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains an ADVPN network diagram and a<br />partial BGP configuration. Which two parameters should you configure in<br />config neighbor-range? (Choose two) <img src="15.JPG" alt="15.JPG" title="15" width="371" height="551"/></div><ol class="MSelAnswers"><li id="Q_18_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_18_0_Chk" class="MSelCheckbox" />set prefix 172.16.1.0 255.255.255.0</div></form></li><li id="Q_18_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_18_1_Chk" class="MSelCheckbox" />set neighbor-group advpn</div></form></li><li id="Q_18_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_18_2_Chk" class="MSelCheckbox" />set route-reflector-client enable</div></form></li><li id="Q_18_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_18_3_Chk" class="MSelCheckbox" />set prefix 10.1.0 255.255.254.0</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(18)">Check</button></li>
+<li class="QuizQuestion" id="Q_19" style="display: none;"><div class="QuestionText">Which two statements about metadata variables are true? (Choose two.) *</div><ol class="MSelAnswers"><li id="Q_19_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_19_0_Chk" class="MSelCheckbox" />They can be used as variables in scripts.</div></form></li><li id="Q_19_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_19_1_Chk" class="MSelCheckbox" />You create them on FortiGate.</div></form></li><li id="Q_19_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_19_2_Chk" class="MSelCheckbox" />The metadata format is $<metadata variable name></div></form></li><li id="Q_19_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_19_3_Chk" class="MSelCheckbox" />They apply only to non-firewall objects.</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(19)">Check</button></li>
+<li class="QuizQuestion" id="Q_20" style="display: none;"><div class="QuestionText">Which two statements about ADVPN are true? (Choose two.) *</div><ol class="MSelAnswers"><li id="Q_20_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_20_0_Chk" class="MSelCheckbox" />It supports NAT for on-demand tunnels.</div></form></li><li id="Q_20_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_20_1_Chk" class="MSelCheckbox" />Routing is configured by enabling add-advpn-route.</div></form></li><li id="Q_20_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_20_2_Chk" class="MSelCheckbox" />auto-discovery-receiver must be set to enable on the spokes</div></form></li><li id="Q_20_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_20_3_Chk" class="MSelCheckbox" />Spoke-to-spoke traffic never goes through the hub</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(20)">Check</button></li>
+<li class="QuizQuestion" id="Q_21" style="display: none;"><div class="QuestionText">What are two functions of automation stitches? (Choose two.) *</div><ol class="MSelAnswers"><li id="Q_21_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_21_0_Chk" class="MSelCheckbox" />An automation stitch configured to execute actions in parallel can be set to insert a specific delay</div></form></li><li id="Q_21_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_21_1_Chk" class="MSelCheckbox" />Automation stitches can be configured on any FortiGate device in a Security Fabric environment.</div></form></li><li id="Q_21_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_21_2_Chk" class="MSelCheckbox" />Automation stitches can be created to run diagnostic commands and email the results when CPU or memory usage exceeds specified thresholds</div></form></li><li id="Q_21_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_21_3_Chk" class="MSelCheckbox" />An automation stitch configured to execute actions sequentially can take<br />parameters from previous actions as input for the current action</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(21)">Check</button></li>
+<li class="QuizQuestion" id="Q_22" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows an ADVPN network The client behind<br />Spoke-1 generates traffic to the device located behind Spoke-2 Which<br />first message does the hub send to Spoke-1 to bring up the dynamic<br />tunnel? <img src="16.JPG" alt="16.JPG" title="16" width="474" height="238"/></div><ol class="MCAnswers"><li id="Q_22_0"><button class="FuncButton" id="Q_22_0_Btn" onclick="CheckMCAnswer(22,0,this)">?</button>&#160;&#160;Shortcut forward.</li><li id="Q_22_1"><button class="FuncButton" id="Q_22_1_Btn" onclick="CheckMCAnswer(22,1,this)">?</button>&#160;&#160;Shortcut offer</li><li id="Q_22_2"><button class="FuncButton" id="Q_22_2_Btn" onclick="CheckMCAnswer(22,2,this)">?</button>&#160;&#160;Shortcut reply</li><li id="Q_22_3"><button class="FuncButton" id="Q_22_3_Btn" onclick="CheckMCAnswer(22,3,this)">?</button>&#160;&#160;Shortcut query</li></ol></li>
+<li class="QuizQuestion" id="Q_23" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows a network diagram. Which IPSec phase 2<br />configuration should you implement so that only one remote site is<br />connected at any time?<img src="17.JPG" alt="17.JPG" title="17" width="589" height="168"/></div><ol class="MCAnswers"><li id="Q_23_0"><button class="FuncButton" id="Q_23_0_Btn" onclick="CheckMCAnswer(23,0,this)">?</button>&#160;&#160;Set route-overlap to either use-new or use-old.</li><li id="Q_23_1"><button class="FuncButton" id="Q_23_1_Btn" onclick="CheckMCAnswer(23,1,this)">?</button>&#160;&#160;Set single-source to enable.</li><li id="Q_23_2"><button class="FuncButton" id="Q_23_2_Btn" onclick="CheckMCAnswer(23,2,this)">?</button>&#160;&#160;Set route-overlap to allow.</li><li id="Q_23_3"><button class="FuncButton" id="Q_23_3_Btn" onclick="CheckMCAnswer(23,3,this)">?</button>&#160;&#160;Set net-device to enable</li></ol></li>
+<li class="QuizQuestion" id="Q_24" style="display: none;"><div class="QuestionText">Which two statements about IKE version 2 are true? (Choose two) *</div><ol class="MSelAnswers"><li id="Q_24_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_24_0_Chk" class="MSelCheckbox" />It supports the XAuth protocol.</div></form></li><li id="Q_24_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_24_1_Chk" class="MSelCheckbox" />It supports the extensible authentication protocol (EAP).</div></form></li><li id="Q_24_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_24_2_Chk" class="MSelCheckbox" />Phase 1 includes main mode</div></form></li><li id="Q_24_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_24_3_Chk" class="MSelCheckbox" />It exchanges a minimum of four messages to establish a secure tunnel</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(24)">Check</button></li>
+<li class="QuizQuestion" id="Q_25" style="display: none;"><div class="QuestionText">Refer to the exhibit which shows information about an OSPF interface. What two conclusions can you draw from this command output?<br />(Choose two.) <img src="19.JPG" alt="19.JPG" title="19" width="554" height="242"/></div><ol class="MSelAnswers"><li id="Q_25_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_25_0_Chk" class="MSelCheckbox" />NGFW-1 is the designated router</div></form></li><li id="Q_25_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_25_1_Chk" class="MSelCheckbox" />The port3 network has more than one OSPF router</div></form></li><li id="Q_25_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_25_2_Chk" class="MSelCheckbox" />The interfaces of the OSPF routers match the MTU value that is configured as 1500.</div></form></li><li id="Q_25_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_25_3_Chk" class="MSelCheckbox" />The OSPF routers are in the area ID of 0.0.0.1.</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(25)">Check</button></li>
+<li class="QuizQuestion" id="Q_26" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains the partial ADVPN configuration of a<br />spoke. Which two parameters must you configure on the corresponding<br />single hub? (Choose two.)<img src="20.JPG" alt="20.JPG" title="20" width="583" height="244"/></div><ol class="MSelAnswers"><li id="Q_26_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_26_0_Chk" class="MSelCheckbox" />set ike-version 2.</div></form></li><li id="Q_26_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_26_1_Chk" class="MSelCheckbox" />set auto-discovery-receiver enable</div></form></li><li id="Q_26_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_26_2_Chk" class="MSelCheckbox" />set auto-discovery-forwarder enable</div></form></li><li id="Q_26_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_26_3_Chk" class="MSelCheckbox" />set auto-discovery-sender enable</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(26)">Check</button></li>
+<li class="QuizQuestion" id="Q_27" style="display: none;"><div class="QuestionText">You configured an address object on the root FortiGate in a Security<br />Fabric. This object is not synchronized with a downstream device. Which<br />two reasons could be the cause? (Choose two.)</div><ol class="MSelAnswers"><li id="Q_27_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_27_0_Chk" class="MSelCheckbox" />The downstream FortiGate has fabric-object-unification set to local.</div></form></li><li id="Q_27_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_27_1_Chk" class="MSelCheckbox" />The downstream FortiGate has configuration-sync set to local.</div></form></li><li id="Q_27_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_27_2_Chk" class="MSelCheckbox" />The address object on the root FortiGate has fabric-object set to disable.</div></form></li><li id="Q_27_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_27_3_Chk" class="MSelCheckbox" />The root FortiGate has configuration-sync set to enable.</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(27)">Check</button></li>
+<li class="QuizQuestion" id="Q_28" style="display: none;"><div class="QuestionText">You want to have faster detection for OSPF. Which parameter should you<br />enable on both connected FortiGate devices?</div><ol class="MCAnswers"><li id="Q_28_0"><button class="FuncButton" id="Q_28_0_Btn" onclick="CheckMCAnswer(28,0,this)">?</button>&#160;&#160;bfd</li><li id="Q_28_1"><button class="FuncButton" id="Q_28_1_Btn" onclick="CheckMCAnswer(28,1,this)">?</button>&#160;&#160;restart-on-topology-change</li><li id="Q_28_2"><button class="FuncButton" id="Q_28_2_Btn" onclick="CheckMCAnswer(28,2,this)">?</button>&#160;&#160;rfc1583-compatible</li><li id="Q_28_3"><button class="FuncButton" id="Q_28_3_Btn" onclick="CheckMCAnswer(28,3,this)">?</button>&#160;&#160;distribute-list-in</li></ol></li>
+<li class="QuizQuestion" id="Q_29" style="display: none;"><div class="QuestionText">Which, three conditions are required for two FortiGate devices to form an<br />OSPF adjacency? (Choose three.)</div><ol class="MSelAnswers"><li id="Q_29_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_29_0_Chk" class="MSelCheckbox" />OSPF interface priority settings are unique</div></form></li><li id="Q_29_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_29_1_Chk" class="MSelCheckbox" />Authentication settings match</div></form></li><li id="Q_29_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_29_2_Chk" class="MSelCheckbox" />OSPF router IDs are unique</div></form></li><li id="Q_29_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_29_3_Chk" class="MSelCheckbox" />OSPF interface network types match</div></form></li><li id="Q_29_4"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_29_4_Chk" class="MSelCheckbox" />OSPF link costs match</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(29)">Check</button></li>
+<li class="QuizQuestion" id="Q_30" style="display: none;"><div class="QuestionText">Which statement about the designated router (DR) and backup designated<br />router (BDR) in an OSPF multi-access network is true?</div><ol class="MCAnswers"><li id="Q_30_0"><button class="FuncButton" id="Q_30_0_Btn" onclick="CheckMCAnswer(30,0,this)">?</button>&#160;&#160;Non-DR and non-BDR routers send link state updates and acknowledgements to<br />224.0.0.6.</li><li id="Q_30_1"><button class="FuncButton" id="Q_30_1_Btn" onclick="CheckMCAnswer(30,1,this)">?</button>&#160;&#160;Non-DR and non-BDR routers form full adjacencies to DR only</li><li id="Q_30_2"><button class="FuncButton" id="Q_30_2_Btn" onclick="CheckMCAnswer(30,2,this)">?</button>&#160;&#160;FortiGate first checks the OSPF ID to elect a DR.</li><li id="Q_30_3"><button class="FuncButton" id="Q_30_3_Btn" onclick="CheckMCAnswer(30,3,this)">?</button>&#160;&#160;Only the DR receives link state information from non-DR routers</li></ol></li>
+<li class="QuizQuestion" id="Q_31" style="display: none;"><div class="QuestionText">Refer to the exhibit, which provides information on BGP neighbors. What<br />can you conclude from this command output? <img src="21.JPG" alt="21.JPG" title="21" width="578" height="206"/></div><ol class="MCAnswers"><li id="Q_31_0"><button class="FuncButton" id="Q_31_0_Btn" onclick="CheckMCAnswer(31,0,this)">?</button>&#160;&#160;The routers are in the same area ID of 0.0.0.0</li><li id="Q_31_1"><button class="FuncButton" id="Q_31_1_Btn" onclick="CheckMCAnswer(31,1,this)">?</button>&#160;&#160;The bfd configuration is set to enable.</li><li id="Q_31_2"><button class="FuncButton" id="Q_31_2_Btn" onclick="CheckMCAnswer(31,2,this)">?</button>&#160;&#160;BGP is attempting to establish a TCP connection with the BGP peer</li><li id="Q_31_3"><button class="FuncButton" id="Q_31_3_Btn" onclick="CheckMCAnswer(31,3,this)">?</button>&#160;&#160;You must change the AS number to match the remote peer</li></ol></li>
+<li class="QuizQuestion" id="Q_32" style="display: none;"><div class="QuestionText">An administrator has configured two FortiGate devices for an HA cluster.<br />While testing HA failover, the administrator notices that some of the switches in the network continue to send traffic to the former primary device What can the administrator do to fix this problem?</div><ol class="MCAnswers"><li id="Q_32_0"><button class="FuncButton" id="Q_32_0_Btn" onclick="CheckMCAnswer(32,0,this)">?</button>&#160;&#160;Configure remote link monitoring to detect an issue in the forwarding path.</li><li id="Q_32_1"><button class="FuncButton" id="Q_32_1_Btn" onclick="CheckMCAnswer(32,1,this)">?</button>&#160;&#160;Verify that the speed and duplex settings match between the FortiGate interfaces and the connected switch ports.</li><li id="Q_32_2"><button class="FuncButton" id="Q_32_2_Btn" onclick="CheckMCAnswer(32,2,this)">?</button>&#160;&#160;Configure set send-garp-on-failover enable under config system ha on both cluster members.</li><li id="Q_32_3"><button class="FuncButton" id="Q_32_3_Btn" onclick="CheckMCAnswer(32,3,this)">?</button>&#160;&#160;Configure set link-failed-signal enable under config system ha on both cluster members</li></ol></li>
+<li class="QuizQuestion" id="Q_33" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows the output from the webfilter fortiguard<br />cache dump and webfilter categories commands. Using the output, how<br />can an administrator determine the category of the training.fortinet.com<br />website? <img src="22.JPG" alt="22.JPG" title="22" width="581" height="374"/></div><ol class="MCAnswers"><li id="Q_33_0"><button class="FuncButton" id="Q_33_0_Btn" onclick="CheckMCAnswer(33,0,this)">?</button>&#160;&#160;The administrator must add both the Domain and IPhex values of 34 to get the category number.</li><li id="Q_33_1"><button class="FuncButton" id="Q_33_1_Btn" onclick="CheckMCAnswer(33,1,this)">?</button>&#160;&#160;The administrator must convert the first three digits of the IP hex value to binary.</li><li id="Q_33_2"><button class="FuncButton" id="Q_33_2_Btn" onclick="CheckMCAnswer(33,2,this)">?</button>&#160;&#160;The administrator can look up the hex value of 34 in the second command<br />output.</li><li id="Q_33_3"><button class="FuncButton" id="Q_33_3_Btn" onclick="CheckMCAnswer(33,3,this)">?</button>&#160;&#160;The administrator must convert the first two digits of the Domain hex value to a decimal value.</li></ol></li>
+<li class="QuizQuestion" id="Q_34" style="display: none;"><div class="QuestionText">Examine the IPsec configuration shown in the exhibit; then answer the<br />question below. <img src="23.JPG" alt="23.JPG" title="23" width="398" height="471"/></div><ol class="MCAnswers"><li id="Q_34_0"><button class="FuncButton" id="Q_34_0_Btn" onclick="CheckMCAnswer(34,0,this)">?</button>&#160;&#160;The IKE real time debug shows the phases 1 and 2 negotiations only. It does not show any more output once the tunnel is up</li><li id="Q_34_1"><button class="FuncButton" id="Q_34_1_Btn" onclick="CheckMCAnswer(34,1,this)">?</button>&#160;&#160;The IKE real time debug shows error messages only. If it does not provide any output, it indicates that the tunnel is operating normally</li><li id="Q_34_2"><button class="FuncButton" id="Q_34_2_Btn" onclick="CheckMCAnswer(34,2,this)">?</button>&#160;&#160;The IKF real time debug shows the phase 1 negotiation only. For information after that, the administrator must use the IPsec real time debug instead: diagnose debug</li><li id="Q_34_3"><button class="FuncButton" id="Q_34_3_Btn" onclick="CheckMCAnswer(34,3,this)">?</button>&#160;&#160;The log-filter setting is set incorrectly. The VPN's traffic does not match this<br />filter.</li></ol></li>
+<li class="QuizQuestion" id="Q_35" style="display: none;"><div class="QuestionText">After enabling IPS, you receive feedback about traffic being dropped.<br />What could be the reason?</div><ol class="MCAnswers"><li id="Q_35_0"><button class="FuncButton" id="Q_35_0_Btn" onclick="CheckMCAnswer(35,0,this)">?</button>&#160;&#160;np-accel-mode is set to enable.</li><li id="Q_35_1"><button class="FuncButton" id="Q_35_1_Btn" onclick="CheckMCAnswer(35,1,this)">?</button>&#160;&#160;IPS is configured to monitor.</li><li id="Q_35_2"><button class="FuncButton" id="Q_35_2_Btn" onclick="CheckMCAnswer(35,2,this)">?</button>&#160;&#160;fail-open is set to disable.</li><li id="Q_35_3"><button class="FuncButton" id="Q_35_3_Btn" onclick="CheckMCAnswer(35,3,this)">?</button>&#160;&#160;traffic-submit is set to disable.</li></ol></li>
+<li class="QuizQuestion" id="Q_36" style="display: none;"><div class="QuestionText">Which statement about network processor (NP) offloading is true?</div><ol class="MCAnswers"><li id="Q_36_0"><button class="FuncButton" id="Q_36_0_Btn" onclick="CheckMCAnswer(36,0,this)">?</button>&#160;&#160;You can disable the NP for each firewall policy using the command np-acceleration<br />set to loose</li><li id="Q_36_1"><button class="FuncButton" id="Q_36_1_Btn" onclick="CheckMCAnswer(36,1,this)">?</button>&#160;&#160;For TCP traffic, FortiGate CPU offloads the first packets of SYN/ACK and ACK of the three-way handshake to NP.</li><li id="Q_36_2"><button class="FuncButton" id="Q_36_2_Btn" onclick="CheckMCAnswer(36,2,this)">?</button>&#160;&#160;The NP provides IPS signature matching.</li><li id="Q_36_3"><button class="FuncButton" id="Q_36_3_Btn" onclick="CheckMCAnswer(36,3,this)">?</button>&#160;&#160;The NP checks the session key or IPSec SA</li></ol></li>
+<li class="QuizQuestion" id="Q_37" style="display: none;"><div class="QuestionText">Which two statements about IKE version 2 fragmentation are true?<br />(Choose two.)</div><ol class="MSelAnswers"><li id="Q_37_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_37_0_Chk" class="MSelCheckbox" />The reassembly timeout default value is 30 seconds</div></form></li><li id="Q_37_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_37_1_Chk" class="MSelCheckbox" />Only some IKE version 2 packets are considered fragmentable</div></form></li><li id="Q_37_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_37_2_Chk" class="MSelCheckbox" />It is performed at the IP layer</div></form></li><li id="Q_37_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_37_3_Chk" class="MSelCheckbox" />The maximum number of IKE version 2 fragments is 128</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(37)">Check</button></li>
+<li class="QuizQuestion" id="Q_38" style="display: none;"><div class="QuestionText">Refer to the exhibit which shows an ADVPN network. Which VPN phase 1<br />parameters must you configure on the hub for the ADVPN feature<br />to function? (Choose two.) <img src="24.JPG" alt="24.JPG" title="24" width="391" height="140"/></div><ol class="MSelAnswers"><li id="Q_38_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_38_0_Chk" class="MSelCheckbox" />set add-route enable</div></form></li><li id="Q_38_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_38_1_Chk" class="MSelCheckbox" />set auto-discovery-sender enable</div></form></li><li id="Q_38_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_38_2_Chk" class="MSelCheckbox" />set auto-discovery-receiver enable</div></form></li><li id="Q_38_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_38_3_Chk" class="MSelCheckbox" />set auto-discovery-forwarder enable</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(38)">Check</button></li>
+<li class="QuizQuestion" id="Q_39" style="display: none;"><div class="QuestionText">Refer to the exhibits, which show the configurations of two address<br />objects from the same FortiGate. Why can you modify the Engineering<br />address object, but not the Finance address object? <img src="25.jpg" alt="25.jpg" title="25" width="821" height="248"/></div><ol class="MCAnswers"><li id="Q_39_0"><button class="FuncButton" id="Q_39_0_Btn" onclick="CheckMCAnswer(39,0,this)">?</button>&#160;&#160;FortiGate joined the Security Fabric and the Finance address object was<br />configured on the root FortiGate.</li><li id="Q_39_1"><button class="FuncButton" id="Q_39_1_Btn" onclick="CheckMCAnswer(39,1,this)">?</button>&#160;&#160;You have read-only access.</li><li id="Q_39_2"><button class="FuncButton" id="Q_39_2_Btn" onclick="CheckMCAnswer(39,2,this)">?</button>&#160;&#160;FortiGate is registered on FortiManager.</li><li id="Q_39_3"><button class="FuncButton" id="Q_39_3_Btn" onclick="CheckMCAnswer(39,3,this)">?</button>&#160;&#160;Another user is editing the Finance address object in workspace mode</li></ol></li>
+<li class="QuizQuestion" id="Q_40" style="display: none;"><div class="QuestionText">Which two statements about the neighbor-group command are true?<br />(Choose two.)</div><ol class="MSelAnswers"><li id="Q_40_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_40_0_Chk" class="MSelCheckbox" />You can apply it in Internal BGP (IBGP) and External BGP (EBGP)</div></form></li><li id="Q_40_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_40_1_Chk" class="MSelCheckbox" />It is combined with the neighbor-range parameter</div></form></li><li id="Q_40_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_40_2_Chk" class="MSelCheckbox" />You can configure it on the GUI</div></form></li><li id="Q_40_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_40_3_Chk" class="MSelCheckbox" />It applies common settings in an OSPF area</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(40)">Check</button></li>
+<li class="QuizQuestion" id="Q_41" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows a session entry Which statement about<br />this session is true? <img src="26.JPG" alt="26.JPG" title="26" width="721" height="268"/></div><ol class="MSelAnswers"><li id="Q_41_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_41_0_Chk" class="MSelCheckbox" />Return traffic to the initiator is sent to 10.1.0.1.</div></form></li><li id="Q_41_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_41_1_Chk" class="MSelCheckbox" />Return traffic to the initiator is sent to 10.200.1.254.</div></form></li><li id="Q_41_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_41_2_Chk" class="MSelCheckbox" />It is an ICMP session from 10.1.10.10 to 10.200.5.1</div></form></li><li id="Q_41_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_41_3_Chk" class="MSelCheckbox" />It is an ICMP session from 10.1.10.10 to 10.200.1.1</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(41)">Check</button></li>
+<li class="QuizQuestion" id="Q_42" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows a central management configuration. Which server will FortiGate choose for web filter rating requests, if 10.0.1.240 is experiencing an outage? <br /><img src="27.JPG" alt="27.JPG" title="27" width="557" height="493"/></div><ol class="MCAnswers"><li id="Q_42_0"><button class="FuncButton" id="Q_42_0_Btn" onclick="CheckMCAnswer(42,0,this)">?</button>&#160;&#160;Public FortiGuard servers</li><li id="Q_42_1"><button class="FuncButton" id="Q_42_1_Btn" onclick="CheckMCAnswer(42,1,this)">?</button>&#160;&#160;10.0.1.242</li><li id="Q_42_2"><button class="FuncButton" id="Q_42_2_Btn" onclick="CheckMCAnswer(42,2,this)">?</button>&#160;&#160;10.0.1.243</li><li id="Q_42_3"><button class="FuncButton" id="Q_42_3_Btn" onclick="CheckMCAnswer(42,3,this)">?</button>&#160;&#160;10.0.1.244</li></ol></li>
+<li class="QuizQuestion" id="Q_43" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows the output of a BGP summary. What two *1/1<br />conclusions can you draw from this BGP summary? (Choose two.) <img src="28.JPG" alt="28.JPG" title="28" width="575" height="165"/></div><ol class="MSelAnswers"><li id="Q_43_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_43_0_Chk" class="MSelCheckbox" />The neighbors displayed are linked to a local router with the neighbor-range set to a value of 4.</div></form></li><li id="Q_43_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_43_1_Chk" class="MSelCheckbox" />External BGP (EBGP) exchanges routing information.</div></form></li><li id="Q_43_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_43_2_Chk" class="MSelCheckbox" />The router 100.64.3.1 has the parameter bfd set to enable</div></form></li><li id="Q_43_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_43_3_Chk" class="MSelCheckbox" />The BGP session with peer 10.127.0.75 is established</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(43)">Check</button></li>
+<li class="QuizQuestion" id="Q_44" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains a partial policy configuration. Which<br />setting must you configure to allow SSH? <img src="29.JPG" alt="29.JPG" title="29" width="380" height="536"/></div><ol class="MCAnswers"><li id="Q_44_0"><button class="FuncButton" id="Q_44_0_Btn" onclick="CheckMCAnswer(44,0,this)">?</button>&#160;&#160;Specify SSH in the Service field.</li><li id="Q_44_1"><button class="FuncButton" id="Q_44_1_Btn" onclick="CheckMCAnswer(44,1,this)">?</button>&#160;&#160;Select an application control profile corresponding to SSH in the Security Profiles section.</li><li id="Q_44_2"><button class="FuncButton" id="Q_44_2_Btn" onclick="CheckMCAnswer(44,2,this)">?</button>&#160;&#160;Include SSH in the Application field.</li><li id="Q_44_3"><button class="FuncButton" id="Q_44_3_Btn" onclick="CheckMCAnswer(44,3,this)">?</button>&#160;&#160;Configure port 22 in the Protocol Options field.</li></ol></li>
+<li class="QuizQuestion" id="Q_45" style="display: none;"><div class="QuestionText">Which ADVPN configuration must be configured using a script<br />on FortiManager, when using VPN Manager to manage FortiGate VPN<br />tunnels? </div><ol class="MCAnswers"><li id="Q_45_0"><button class="FuncButton" id="Q_45_0_Btn" onclick="CheckMCAnswer(45,0,this)">?</button>&#160;&#160;Configure IP addresses on IPsec virtual interlaces</li><li id="Q_45_1"><button class="FuncButton" id="Q_45_1_Btn" onclick="CheckMCAnswer(45,1,this)">?</button>&#160;&#160;Disable add-route on hub</li><li id="Q_45_2"><button class="FuncButton" id="Q_45_2_Btn" onclick="CheckMCAnswer(45,2,this)">?</button>&#160;&#160;Set protected network to all</li><li id="Q_45_3"><button class="FuncButton" id="Q_45_3_Btn" onclick="CheckMCAnswer(45,3,this)">?</button>&#160;&#160;Enable AD-VPN in IPsec phase 1</li></ol></li>
+<li class="QuizQuestion" id="Q_46" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows a routing table. What two options can you<br />configure in OSPF to block the advertisement of the 10.1.10.0<br />prefix? (Choose two.) <img src="30.JPG" alt="30.JPG" title="30" width="500" height="76"/></div><ol class="MSelAnswers"><li id="Q_46_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_46_0_Chk" class="MSelCheckbox" />Configure a distribute-list-out.</div></form></li><li id="Q_46_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_46_1_Chk" class="MSelCheckbox" />Disable Redistribute Connected.</div></form></li><li id="Q_46_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_46_2_Chk" class="MSelCheckbox" />Configure a route-map-out.</div></form></li><li id="Q_46_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_46_3_Chk" class="MSelCheckbox" />Remove the 10.1.10.0 prefix from the OSPF n</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(46)">Check</button></li>
+<li class="QuizQuestion" id="Q_47" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows the output of a diagnose command. What can be concluded about the debug output in this scenario? <img src="31.JPG" alt="31.JPG" title="31" width="823" height="417"/></div><ol class="MCAnswers"><li id="Q_47_0"><button class="FuncButton" id="Q_47_0_Btn" onclick="CheckMCAnswer(47,0,this)">?</button>&#160;&#160;FortiGate used 64.26.151.37 as the initial server to validate its contract</li><li id="Q_47_1"><button class="FuncButton" id="Q_47_1_Btn" onclick="CheckMCAnswer(47,1,this)">?</button>&#160;&#160;Servers with a negative TZ value are less preferred for rating requests.</li><li id="Q_47_2"><button class="FuncButton" id="Q_47_2_Btn" onclick="CheckMCAnswer(47,2,this)">?</button>&#160;&#160;The first server provided to FortiGate when it performed a DNS query looking fThe first server provided to FortiGate when it performed a DNS query looking for a list of rating servers, was 121.111.236.179or a<br />list of rating servers, was 121.111.236.179</li><li id="Q_47_3"><button class="FuncButton" id="Q_47_3_Btn" onclick="CheckMCAnswer(47,3,this)">?</button>&#160;&#160;There is a natural correlation between the value in the Packets field and the<br />value in the Weight field</li></ol></li>
+<li class="QuizQuestion" id="Q_48" style="display: none;"><div class="QuestionText">In which two ways does FortiManager function when it is deployed as a<br />local FDS? (Choose two)</div><ol class="MSelAnswers"><li id="Q_48_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_48_0_Chk" class="MSelCheckbox" />It supports rating requests from non-FortiGate devices.</div></form></li><li id="Q_48_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_48_1_Chk" class="MSelCheckbox" />lt can be configured as an update server a rating server or both</div></form></li><li id="Q_48_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_48_2_Chk" class="MSelCheckbox" />It caches available firmware updates for unmanaged devices</div></form></li><li id="Q_48_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_48_3_Chk" class="MSelCheckbox" />It provides VM license validation services</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(48)">Check</button></li>
+<li class="QuizQuestion" id="Q_49" style="display: none;"><div class="QuestionText">Refer to the exhibit, which provides information on BGP neighbors. What<br />can you conclude from this command output? <img src="32.JPG" alt="32.JPG" title="32" width="724" height="263"/></div><ol class="MCAnswers"><li id="Q_49_0"><button class="FuncButton" id="Q_49_0_Btn" onclick="CheckMCAnswer(49,0,this)">?</button>&#160;&#160;10.2.0.254 is not the next hop for the local router</li><li id="Q_49_1"><button class="FuncButton" id="Q_49_1_Btn" onclick="CheckMCAnswer(49,1,this)">?</button>&#160;&#160;The routers are in the same area ID of 0.0.0.0.</li><li id="Q_49_2"><button class="FuncButton" id="Q_49_2_Btn" onclick="CheckMCAnswer(49,2,this)">?</button>&#160;&#160;You must change the AS number to match the remote peer.</li><li id="Q_49_3"><button class="FuncButton" id="Q_49_3_Btn" onclick="CheckMCAnswer(49,3,this)">?</button>&#160;&#160;The bfd configuration is set to enable.</li></ol></li>
+<li class="QuizQuestion" id="Q_50" style="display: none;"><div class="QuestionText">Refer to the exhibit which shows config system central-management<br />information. Which setting must you configure for the web filtering feature<br />to function? <img src="33.JPG" alt="33.JPG" title="33" width="568" height="339"/></div><ol class="MCAnswers"><li id="Q_50_0"><button class="FuncButton" id="Q_50_0_Btn" onclick="CheckMCAnswer(50,0,this)">?</button>&#160;&#160;Set update-server-location to automatic</li><li id="Q_50_1"><button class="FuncButton" id="Q_50_1_Btn" onclick="CheckMCAnswer(50,1,this)">?</button>&#160;&#160;Add server.fortiguard.net to the Server list</li><li id="Q_50_2"><button class="FuncButton" id="Q_50_2_Btn" onclick="CheckMCAnswer(50,2,this)">?</button>&#160;&#160;Configure server-type with the rating option</li><li id="Q_50_3"><button class="FuncButton" id="Q_50_3_Btn" onclick="CheckMCAnswer(50,3,this)">?</button>&#160;&#160;Configure securewf.fortiguard.net on the default servers</li></ol></li>
+<li class="QuizQuestion" id="Q_51" style="display: none;"><div class="QuestionText">You created a VPN community using VPN Manager on FortiManager. You<br />also added gateways to the VPN community. Now you are trying to create<br />firewall policies to permit traffic over the tunnel; however, the VPN<br />interfaces do not appear as available options. What step must you take to resolve this issue?</div><ol class="MCAnswers"><li id="Q_51_0"><button class="FuncButton" id="Q_51_0_Btn" onclick="CheckMCAnswer(51,0,this)">?</button>&#160;&#160;Create interface mappings for the IPsec VPN interfaces before you use them in a policy</li><li id="Q_51_1"><button class="FuncButton" id="Q_51_1_Btn" onclick="CheckMCAnswer(51,1,this)">?</button>&#160;&#160;Install the VPN community and gateway configuration on the FortiGate devices so that the VPN interfaces appear on the Policy Objects on FortiManager.</li><li id="Q_51_2"><button class="FuncButton" id="Q_51_2_Btn" onclick="CheckMCAnswer(51,2,this)">?</button>&#160;&#160;Refresh the device status using the Device Manager so that FortiGate populates the IPSec interfaces</li><li id="Q_51_3"><button class="FuncButton" id="Q_51_3_Btn" onclick="CheckMCAnswer(51,3,this)">?</button>&#160;&#160;Configure the phase 1 settings in the VPN community that you didn't initially configure. FortiGate automatically generates the interfaces after you configure therequired settings.</li></ol></li>
+<li class="QuizQuestion" id="Q_52" style="display: none;"><div class="QuestionText">You want to improve reliability over a lossy IPSec tunnel. Which<br />combination of IPSec phase 1 parameters should you configure?</div><ol class="MCAnswers"><li id="Q_52_0"><button class="FuncButton" id="Q_52_0_Btn" onclick="CheckMCAnswer(52,0,this)">?</button>&#160;&#160;fragmentation and fragmentation-mtu</li><li id="Q_52_1"><button class="FuncButton" id="Q_52_1_Btn" onclick="CheckMCAnswer(52,1,this)">?</button>&#160;&#160;keepalive and keylive</li><li id="Q_52_2"><button class="FuncButton" id="Q_52_2_Btn" onclick="CheckMCAnswer(52,2,this)">?</button>&#160;&#160;fec-ingress and fsc-egress</li><li id="Q_52_3"><button class="FuncButton" id="Q_52_3_Btn" onclick="CheckMCAnswer(52,3,this)">?</button>&#160;&#160;dpd and dpd-retryinterval</li></ol></li>
+<li class="QuizQuestion" id="Q_53" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains partial output from an IKE real-time<br />debug. Why did the tunnel not come up?<img src="34.JPG" alt="34.JPG" title="34" width="573" height="464"/></div><ol class="MCAnswers"><li id="Q_53_0"><button class="FuncButton" id="Q_53_0_Btn" onclick="CheckMCAnswer(53,0,this)">?</button>&#160;&#160;The Diffie-Hellman group does not match on the local and remote gateways.</li><li id="Q_53_1"><button class="FuncButton" id="Q_53_1_Btn" onclick="CheckMCAnswer(53,1,this)">?</button>&#160;&#160;The encapsulation method for phase 2 is set to none on local and remote<br />gateways.</li><li id="Q_53_2"><button class="FuncButton" id="Q_53_2_Btn" onclick="CheckMCAnswer(53,2,this)">?</button>&#160;&#160;The proposal ID does not match between local and remote gateways</li><li id="Q_53_3"><button class="FuncButton" id="Q_53_3_Btn" onclick="CheckMCAnswer(53,3,this)">?</button>&#160;&#160;The local gateway has configured less secure encryption and hashing<br />algorithms compared to the remote gateway</li></ol></li>
+<li class="QuizQuestion" id="Q_54" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows the output of diagnose sys session list. If *1/1<br />the HA ID for the primary device is 0, what will happen if the primary fails<br />and the secondary becomes the primary? <img src="35.JPG" alt="35.JPG" title="35" width="573" height="248"/></div><ol class="MCAnswers"><li id="Q_54_0"><button class="FuncButton" id="Q_54_0_Btn" onclick="CheckMCAnswer(54,0,this)">?</button>&#160;&#160;The secondary device has this session synchronized; however, because application control is applied, the session will be marked dirty and have to be reevaluated after failover</li><li id="Q_54_1"><button class="FuncButton" id="Q_54_1_Btn" onclick="CheckMCAnswer(54,1,this)">?</button>&#160;&#160;Traffic for this session continues to be permitted on the new primary device after failover, without requiring the client to restart the session with the server</li><li id="Q_54_2"><button class="FuncButton" id="Q_54_2_Btn" onclick="CheckMCAnswer(54,2,this)">?</button>&#160;&#160;The session state will be preserved but the kernel will need to re-evaluate thesession due to NAT being applied</li><li id="Q_54_3"><button class="FuncButton" id="Q_54_3_Btn" onclick="CheckMCAnswer(54,3,this)">?</button>&#160;&#160;The session will be removed from the session table of the secondary device due to the presence of allowed error packets, which will force the client to restart the session with the server</li></ol></li>
+<li class="QuizQuestion" id="Q_55" style="display: none;"><div class="QuestionText">You want to configure faster failure detection for BGP. Which parameter<br />should you enable on both connected FortiGate devices?</div><ol class="MCAnswers"><li id="Q_55_0"><button class="FuncButton" id="Q_55_0_Btn" onclick="CheckMCAnswer(55,0,this)">?</button>&#160;&#160;Distribute-list-in</li><li id="Q_55_1"><button class="FuncButton" id="Q_55_1_Btn" onclick="CheckMCAnswer(55,1,this)">?</button>&#160;&#160;Graceful-restart</li><li id="Q_55_2"><button class="FuncButton" id="Q_55_2_Btn" onclick="CheckMCAnswer(55,2,this)">?</button>&#160;&#160;Ebgp-enforce-multihop</li><li id="Q_55_3"><button class="FuncButton" id="Q_55_3_Btn" onclick="CheckMCAnswer(55,3,this)">?</button>&#160;&#160;bfd</li></ol></li>
+<li class="QuizQuestion" id="Q_56" style="display: none;"><div class="QuestionText">Which two statements about the Security Fabric are true? (Choose two.) *</div><ol class="MSelAnswers"><li id="Q_56_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_56_0_Chk" class="MSelCheckbox" />FortiGate uses the FortiTelemetry protocol to communicate with FortiAnalyzer</div></form></li><li id="Q_56_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_56_1_Chk" class="MSelCheckbox" />Only FortiGate devices with configuration-sync set to default receive and synchronize global CMDB objects that the root FortiGate sends</div></form></li><li id="Q_56_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_56_2_Chk" class="MSelCheckbox" />Only the root FortiGate collects network topology information and forwards it to FortiAnalyzer</div></form></li><li id="Q_56_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_56_3_Chk" class="MSelCheckbox" />Only the root FortiGate sends logs to FortiAnalyzer</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(56)">Check</button></li>
+<li class="QuizQuestion" id="Q_57" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains a CLI script configuration<br />on FortiManager. An administrator configured the CLI script on<br />FortiManager run the script tailed to apply any changes to the managed<br />device after being executed. What are two reasons why the script did not<br />make any changes to the managed device? (Choose two) <img src="36.JPG" alt="36.JPG" title="36" width="567" height="403"/></div><ol class="MSelAnswers"><li id="Q_57_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_57_0_Chk" class="MSelCheckbox" />The commands that start with the # sign did not run</div></form></li><li id="Q_57_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_57_1_Chk" class="MSelCheckbox" />CLI scripts must start with #!.</div></form></li><li id="Q_57_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_57_2_Chk" class="MSelCheckbox" />Incomplete commands can cause CLI scripts to fail.</div></form></li><li id="Q_57_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_57_3_Chk" class="MSelCheckbox" />Static routes can be added using only TCI scripts</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(57)">Check</button></li>
+<li class="QuizQuestion" id="Q_58" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains an active-active load balancing<br />scenario.<br />During the traffic flow the primary FortiGate forwards the SYN packet to<br />the secondary FortiGate.<br />What is the destination MAC address or addresses when packets are<br />forwarded from the primary FortiGate to the secondary FortiGate? <img src="37.JPG" alt="37.JPG" title="37" width="568" height="217"/></div><ol class="MCAnswers"><li id="Q_58_0"><button class="FuncButton" id="Q_58_0_Btn" onclick="CheckMCAnswer(58,0,this)">?</button>&#160;&#160;Secondary virtual MAC port1</li><li id="Q_58_1"><button class="FuncButton" id="Q_58_1_Btn" onclick="CheckMCAnswer(58,1,this)">?</button>&#160;&#160;Secondary physical MAC port1</li><li id="Q_58_2"><button class="FuncButton" id="Q_58_2_Btn" onclick="CheckMCAnswer(58,2,this)">?</button>&#160;&#160;Secondary virtual MAC port1 then physical MAC port1</li><li id="Q_58_3"><button class="FuncButton" id="Q_58_3_Btn" onclick="CheckMCAnswer(58,3,this)">?</button>&#160;&#160;Secondary physical MAC port2 then virtual MAC port2</li></ol></li>
+<li class="QuizQuestion" id="Q_59" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows the output of diagnose sys session<br />stat. Which statement about the output shown in the exhibit is correct? <img src="38.JPG" alt="38.JPG" title="38" width="575" height="367"/></div><ol class="MCAnswers"><li id="Q_59_0"><button class="FuncButton" id="Q_59_0_Btn" onclick="CheckMCAnswer(59,0,this)">?</button>&#160;&#160;All the sessions in the session table are TCP sessions.</li><li id="Q_59_1"><button class="FuncButton" id="Q_59_1_Btn" onclick="CheckMCAnswer(59,1,this)">?</button>&#160;&#160;162 sessions have been deleted because of memory page exhaustion</li><li id="Q_59_2"><button class="FuncButton" id="Q_59_2_Btn" onclick="CheckMCAnswer(59,2,this)">?</button>&#160;&#160;There are 166 TCP sessions waiting to complete the three-way handshake</li><li id="Q_59_3"><button class="FuncButton" id="Q_59_3_Btn" onclick="CheckMCAnswer(59,3,this)">?</button>&#160;&#160;There are two sessions that have not been removed in case of any out-of-order packets that arrive</li></ol></li>
+<li class="QuizQuestion" id="Q_60" style="display: none;"><div class="QuestionText">Refer to the exhibit which shows two configured FortiGate devices and<br />peering over FGSP. The main link directly connects the two FortiGate<br />devices and is configured using the set session- syn-dev <interface><br />command. What is the primary reason to configure the main link? <img src="39.JPG" alt="39.JPG" title="39" width="382" height="332"/></div><ol class="MCAnswers"><li id="Q_60_0"><button class="FuncButton" id="Q_60_0_Btn" onclick="CheckMCAnswer(60,0,this)">?</button>&#160;&#160;To load balance both sessions and configuration synchronization between layer 2 and 3</li><li id="Q_60_1"><button class="FuncButton" id="Q_60_1_Btn" onclick="CheckMCAnswer(60,1,this)">?</button>&#160;&#160;To have both sessions and configuration synchronization in layer 2</li><li id="Q_60_2"><button class="FuncButton" id="Q_60_2_Btn" onclick="CheckMCAnswer(60,2,this)">?</button>&#160;&#160;To have both sessions and configuration synchronization in layer 3</li><li id="Q_60_3"><button class="FuncButton" id="Q_60_3_Btn" onclick="CheckMCAnswer(60,3,this)">?</button>&#160;&#160;To have only configuration synchronization in layer 3</li></ol></li>
+<li class="QuizQuestion" id="Q_61" style="display: none;"><div class="QuestionText">Refer to the exhibit, which shows an SSL certification inspection<br />configuration. Which action does FortiGate take if the server name<br />indication (SNI) does not match either the common name (CN) or any of<br />the subject alternative names (SAN) in the server certificate?</div><ol class="MCAnswers"><li id="Q_61_0"><button class="FuncButton" id="Q_61_0_Btn" onclick="CheckMCAnswer(61,0,this)">?</button>&#160;&#160;FortiGate closes the connection because this represents an invalid SSL/TLS configuration</li><li id="Q_61_1"><button class="FuncButton" id="Q_61_1_Btn" onclick="CheckMCAnswer(61,1,this)">?</button>&#160;&#160;FortiGate uses the SNI from the user's web browser.</li><li id="Q_61_2"><button class="FuncButton" id="Q_61_2_Btn" onclick="CheckMCAnswer(61,2,this)">?</button>&#160;&#160;FortiGate uses the CN information from the Subject field in the server<br />certificate</li><li id="Q_61_3"><button class="FuncButton" id="Q_61_3_Btn" onclick="CheckMCAnswer(61,3,this)">?</button>&#160;&#160;FortiGate uses the first entry listed in the SAN field in the server certificate</li></ol></li>
+<li class="QuizQuestion" id="Q_62" style="display: none;"><div class="QuestionText">Which two statements about the BFD parameter in BGP are true? (Choose<br />two.)</div><ol class="MSelAnswers"><li id="Q_62_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_62_0_Chk" class="MSelCheckbox" />It allows failure detection in less than one second.</div></form></li><li id="Q_62_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_62_1_Chk" class="MSelCheckbox" />The two routers must be connected to the same subnet</div></form></li><li id="Q_62_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_62_2_Chk" class="MSelCheckbox" />It is supported for neighbors over multiple hops</div></form></li><li id="Q_62_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_62_3_Chk" class="MSelCheckbox" />It detects only two-way failures.</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(62)">Check</button></li>
+<li class="QuizQuestion" id="Q_63" style="display: none;"><div class="QuestionText">Refer to the exhibit, which contains a partial OSPF configuration. What can<br />you conclude from this output? <img src="40.JPG" alt="40.JPG" title="40" width="581" height="199"/></div><ol class="MCAnswers"><li id="Q_63_0"><button class="FuncButton" id="Q_63_0_Btn" onclick="CheckMCAnswer(63,0,this)">?</button>&#160;&#160;Neighbors maintain communication with the restarting router.</li><li id="Q_63_1"><button class="FuncButton" id="Q_63_1_Btn" onclick="CheckMCAnswer(63,1,this)">?</button>&#160;&#160;The restarting router sends gratuitous ARP for 30 seconds.</li><li id="Q_63_2"><button class="FuncButton" id="Q_63_2_Btn" onclick="CheckMCAnswer(63,2,this)">?</button>&#160;&#160;The router sends grace LSAs before it restarts.</li><li id="Q_63_3"><button class="FuncButton" id="Q_63_3_Btn" onclick="CheckMCAnswer(63,3,this)">?</button>&#160;&#160;FortiGate restarts if the topology changes.</li></ol></li>
+<li class="QuizQuestion" id="Q_64" style="display: none;"><div class="QuestionText">Which two statements about ADVPN are true? (Choose two.) *</div><ol class="MSelAnswers"><li id="Q_64_0"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_64_0_Chk" class="MSelCheckbox" />You must configure phase 2 quick mode selectors to 0.0.0.0 0.0.0.0.</div></form></li><li id="Q_64_1"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_64_1_Chk" class="MSelCheckbox" />You must disable add-route in the hub</div></form></li><li id="Q_64_2"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_64_2_Chk" class="MSelCheckbox" />All FortiGate devices must be in the same autonomous system (AS).</div></form></li><li id="Q_64_3"><form method="post" onsubmit="return false;"><div><input type="checkbox" id="Q_64_3_Chk" class="MSelCheckbox" />The hub adds routes based on IKE negotiations.</div></form></li></ol><button class="FuncButton" onclick="CheckMultiSelAnswer(64)">Check</button></li>
+<li class="QuizQuestion" id="Q_65" style="display: none;"><div class="QuestionText">Which FortiGate in a Security Fabric sends logs to FortiAnalyzer? *</div><ol class="MCAnswers"><li id="Q_65_0"><button class="FuncButton" id="Q_65_0_Btn" onclick="CheckMCAnswer(65,0,this)">?</button>&#160;&#160;The FortiGate devices performing network address translation (NAT) or unified threat management (UTM), if configured.</li><li id="Q_65_1"><button class="FuncButton" id="Q_65_1_Btn" onclick="CheckMCAnswer(65,1,this)">?</button>&#160;&#160;Only the last FortiGate that handled a session in the Security Fabric</li><li id="Q_65_2"><button class="FuncButton" id="Q_65_2_Btn" onclick="CheckMCAnswer(65,2,this)">?</button>&#160;&#160;Only the root FortiGate</li><li id="Q_65_3"><button class="FuncButton" id="Q_65_3_Btn" onclick="CheckMCAnswer(65,3,this)">?</button>&#160;&#160;Each FortiGate in the Security Fabric.</li></ol></li></ol>
+
+
+
+</div>
+
+</div>
+
+<div class="Feedback" id="FeedbackDiv">
+<div class="FeedbackText" id="FeedbackContent"></div>
+<button id="FeedbackOKButton" class="FuncButton" onclick="HideFeedback(); return false;">&#160;OK&#160;</button>
+</div>
+
+<!-- BeginBottomNavButtons -->
+
+
+<div class="NavButtonBar" id="BottomNavBar">
+
+
+
+
+<button class="NavButton" onclick="location='contents.htm'; return false;"> Index </button>
+
+
+
+<button class="NavButton" onclick="location='nextpage.htm'; return false;">=&gt;</button>
+
+
+</div>
+
+
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+
+</body>
+
+</html>
